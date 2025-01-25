@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "professionalSkills": "Dancer | Pianist | Choirmaster"
+  },
+  "Header": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "AboutPage": {
+    "aboutMe": "About Me"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "imprint": "Imprint"
+  }
+}
