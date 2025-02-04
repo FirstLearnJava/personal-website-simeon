@@ -3,14 +3,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useTranslations } from 'next-intl';
 
 type Props = {};
 
 const requiredSchema = Yup.object({
-  email: Yup.string().email('Invalid email').required('Email is required'),
+  email: Yup.string().email('Invalid email'),
+  firstName: Yup.string(),
+  lastName: Yup.string(),
 });
 
 function SubscribeForm({}: Props) {
+  const translation = useTranslations('Newsletter');
   const [status, setStatus] = useState<number | null>(null);
   const [message, setMessage] = useState<string>('');
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
@@ -34,6 +38,8 @@ function SubscribeForm({}: Props) {
       <Formik
         initialValues={{
           email: '',
+          firstName: '',
+          lastName: '',
         }}
         validationSchema={requiredSchema}
         onSubmit={async (values, { resetForm }) => {
@@ -46,63 +52,88 @@ function SubscribeForm({}: Props) {
               },
               body: JSON.stringify({
                 email: values?.email,
+                firstName: values?.firstName,
+                lastName: values?.lastName,
               }),
             });
             const datas = await response.json();
             if (datas.status >= 400) {
+              console.log(datas);
               setStatus(datas.status);
-              setMessage(
-                'Error joining the newsletter. You can directly contact me at github@ebraj.',
-              );
+              setMessage('');
               setTimeout(() => {
-                setMessage('');
                 setButtonDisabled(false);
-              }, 2000);
+                setMessage(translation('errorJoiningNewsletter'));
+              }, 300);
               return;
             }
 
             setStatus(201);
-            setMessage('Thank you for subscribing my newsletter 👻.');
+            setMessage('');
             setRun(true);
             setTimeout(() => {
               setTotalCounts(0);
-              setMessage('');
               resetForm();
               setButtonDisabled(false);
-            }, 4000);
+              setMessage(translation('confirmationEmail'));
+            }, 300);
             setTotalCounts(400);
           } catch (error) {
             setStatus(500);
-            setMessage(
-              'Error joining the newsletter. You can directly contact me at github@ebraj.',
-            );
+            setMessage('');
             setTimeout(() => {
-              setMessage('');
               setButtonDisabled(false);
-            }, 2000);
+              setMessage(translation('errorJoiningNewsletter'));
+            }, 300);
           }
         }}
       >
-        <Form className="w-full">
-          <div className="w-full bg-transparent border flex-1 border-black rounded-full flex gap-2 px-3">
-            <Field
-              type="email"
-              name="email"
-              className="w-full grow rounded-md bg-transparent px-5 py-3 outline-none"
-              placeholder="Enter your email"
-              autoComplete="off"
-            />
-            <button
-              className="rounded-full bg-black  my-2 px-4 py-2 font-bold text-gray-100 transition-all hover:scale-105 hover:bg-gray-900 disabled:opacity-80"
-              type="submit"
-              disabled={buttonDisabled}
-            >
-              {submitting ? 'Submitting' : 'Subscribe'}
-            </button>
-          </div>
+        <Form className="w-full flex flex-col items-center gap-4 mt-12">
+          <label className="w-full">
+            <span className="ml-2">{translation('enterEmail')}</span>
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+              <Field
+                type="email"
+                name="email"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                placeholder="Email"
+                autoComplete="off"
+              />
+            </div>
+          </label>
+          <label className="w-full">
+            <span className="ml-2">{translation('enterFirstName')}</span>
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+              <Field
+                name="firstName"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                placeholder="First name"
+                autoComplete="off"
+              />
+            </div>
+          </label>
+          <label className="w-full">
+            <span className="ml-2">{translation('enterLastName')}</span>
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+              <Field
+                name="lastName"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                placeholder="Last name"
+                autoComplete="off"
+              />
+            </div>
+          </label>
+          <button
+            className="rounded-full bg-black mt-3 px-4 py-2 font-bold text-gray-100 transition-all hover:scale-105 hover:bg-gray-900 disabled:opacity-80 w-40 text-center"
+            type="submit"
+            disabled={buttonDisabled}
+          >
+            {submitting ? 'Submitting' : translation('submit')}
+          </button>
+
           {message && (
             <p
-              className={`${status !== 201 ? 'text-red-500' : 'text-green-500'} pt-4 font-black`}
+              className={`${status !== 201 ? 'text-red-500' : 'text-green-600'} pt-4 font-black -mb-2`}
             >
               {message}
             </p>

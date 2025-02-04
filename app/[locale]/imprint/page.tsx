@@ -80,6 +80,7 @@ export default function ImprintPage() {
           Dieses Impressum gilt auch für:
         </h3>
         <p>https://www.instagram.com/simeonmalte</p>
+        <div className=" text-2xl">NEWSLETTER ABO</div>
       </div>
     </div>
   );

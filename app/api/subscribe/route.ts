@@ -3,11 +3,13 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request, res: NextApiResponse) {
   try {
-    const { email } = await req.json();
+    const userData = await req.json();
+    console.log(userData);
 
-    if (!email) {
+    if (!userData) {
       return res.status(400).json({
-        error: 'Email is required',
+        error:
+          'Please check, if you provided your email, your first name and your last name.',
       });
     }
 
@@ -28,8 +30,13 @@ export async function POST(req: Request, res: NextApiResponse) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email_address: email,
-        status: 'subscribed',
+        email_address: userData.email,
+        //status has to be changed to "pending" for double-opt-in
+        status: 'pending',
+        merge_fields: {
+          FNAME: userData.firstName,
+          LNAME: userData.lastName,
+        },
       }),
     });
     if (!response.ok) {

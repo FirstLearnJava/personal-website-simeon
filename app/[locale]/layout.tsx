@@ -22,21 +22,30 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale?: string };
 }) {
+  if (!params?.locale) {
+    notFound();
+  }
+
+  const locale = params.locale;
   if (!routing.locales.includes(locale as never)) {
     notFound();
   }
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={`w-full h-full z-0 bg-[#fdfbfb]`}>
+      <body
+        className={`min-w-screen min-h-screen flex flex-col z-0 bg-[#fdfbfb]`}
+      >
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <div className="md:px-32 md:py-[72px]">{children}</div>
+          <main className="md:px-32 md:pt-[72px] md:pb-[24px] flex-grow">
+            {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
       </body>
