@@ -21,5 +21,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Lora', serif;
-  font-size: 1.125rem;
+}
+
+p {
+  font-size: 0.875em;
 }

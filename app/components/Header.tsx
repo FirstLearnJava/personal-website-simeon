@@ -13,10 +13,13 @@ const Header = () => {
     <nav className="flex w-full justify-between sm:px-20 py-5 border-b-[1px] border-[#9f9f9f] text-lg font-medium">
       <div className=" text-[#333]">
         <ul className="flex gap-8">
-          <li className="hover:text-black hover:scale-[1.02]">
+          <li className="hover:text-black hover:scale-[1.03]">
             <Link href="/">{t('home')}</Link>
           </li>
           <li className="hover:text-black hover:scale-[1.02]">
+            <Link href="/projects">{t('projects')}</Link>
+          </li>
+          <li className="hover:text-black hover:scale-[1.03]">
             <Link href="/about">{t('about')}</Link>
           </li>
         </ul>

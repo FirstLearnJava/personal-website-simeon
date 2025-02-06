@@ -5,7 +5,8 @@
   "Header": {
     "home": "Home",
     "about": "About",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "projects": "Projekte"
   },
   "AboutPage": {
     "aboutMe": "Über mich"
