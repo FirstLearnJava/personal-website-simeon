@@ -44,6 +44,14 @@ function SubscribeForm({}: Props) {
         validationSchema={requiredSchema}
         onSubmit={async (values, { resetForm }) => {
           setButtonDisabled(true);
+          if (values?.email === '') {
+            setMessage('');
+            setTimeout(() => {
+              setButtonDisabled(false);
+              setMessage(translation('errorJoiningNewsletter'));
+            }, 300);
+            return;
+          }
           try {
             const response = await fetch('/api/subscribe', {
               method: 'POST',
@@ -88,7 +96,7 @@ function SubscribeForm({}: Props) {
           }
         }}
       >
-        <Form className="w-full flex flex-col items-center gap-4 mt-12">
+        <Form className="w-full flex flex-col items-center gap-4 mt-10">
           <label className="w-full">
             <span className="ml-2">{translation('enterEmail')}</span>
             <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">

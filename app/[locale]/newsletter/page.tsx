@@ -8,7 +8,7 @@ export default function NewsletterPage() {
     <div className="flex flex-col items-center">
       <h1 className="mt-7 font-mont text-[28px]">{t('welcomeToNewsletter')}</h1>
       <SubscribeForm />
-      <div className="w-[720px] mt-20 text-base flex flex-col gap-[2px]">
+      <div className="w-[720px] mt-20 mb-3 text-base flex flex-col gap-[2px]">
         <h2 className="font-semibold text-lg">{t('newsletterInfos')}</h2>
         <p>{t('doubleOptIn')}</p>
         <p>{t('optOut')}</p>

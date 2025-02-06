@@ -1,11 +1,8 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
 import Image from 'next/image';
 import homepageCover from '../../public/homepage/DancePerformanceMuk.jpg';
-import ProjectsCard from '../components/ProjectsCard';
-import ProjectsCard2 from '../components/ProjectsCard2';
+import Projects from '../components/Projects';
 // import { Link } from '@/i18n/routing';
 
 export default function HomePage() {
@@ -29,13 +26,11 @@ export default function HomePage() {
           alt="playing piano in rainbow-colored smoke"
           src={homepageCover}
           className="mt-10 rounded-sm mb-2"
-          /* style={{ width: '65%', height: 'auto' }} */
           width={900}
           height={394}
           sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw"
         />
-        <ProjectsCard />
-        <ProjectsCard2 />
+        <Projects />
       </div>
     </>
   );

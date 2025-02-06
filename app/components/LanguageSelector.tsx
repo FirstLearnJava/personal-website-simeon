@@ -5,7 +5,7 @@ import { ArrowIcon } from '@/public/icons/ArrowIcon';
 import { useRouter } from '@/i18n/routing';
 import { usePathname } from 'next/navigation';
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 //import { useParams } from 'next/navigation';
 import { GermanyIcon } from '@/public/icons/GermanyIcon';
 
@@ -26,6 +26,9 @@ const LanguageSelector = () => {
     // router.replace({ pathname, params }, { locale: locale });
   };
 
+  useEffect(() => {
+    setIsDropDownOpen(false);
+  }, [pathname]);
   return (
     <Fragment>
       <div
