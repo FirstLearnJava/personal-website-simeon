@@ -25,8 +25,16 @@
     "optOut": "Abmelden (Opt-Out): Sie können dem Empfang der Newsletter jederzeit widersprechen. In jedem Newsletter finden Sie einen Abmeldelink über den Sie sich wieder austragen können.",
     "optionalNameDeclaration": "Die Angabe Ihres Vor- & Nachnamens ist optional.",
     "submit": "Anmelden",
+    "submitting": "Anmelden...",
     "privacyInformationInfo": "Weitere Informationen zum Newsletter-Versand sowie zu Ihren Widerrufsmöglichkeiten erhalten Sie in der Datenschutzerklärung.",
     "confirmationEmail": "Vielen Dank für Ihr Interesse! Sie erhalten umgehend ein Bestätigungsmail. Bitte klicken Sie auf den Link dieser Mail, um Ihre Anmeldung zu bestätigen.",
     "errorJoiningNewsletter": "Fehler bei der Newsletteranmeldung. Bitte versuchen Sie es erneut, oder kontaktieren Sie mich direkt unter simeon.ohlsen@test.at"
+  },
+  "DynamicProjects": {
+    "categories": "Kategorien",
+    "dance": "Tanz",
+    "pianism": "Piano",
+    "choirmastering": "Chorleitung",
+    "allProjects": "Alle Projekte"
   }
 }

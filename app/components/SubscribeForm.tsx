@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Yup from 'yup';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { useTranslations } from 'next-intl';
-
-type Props = {};
 
 const requiredSchema = Yup.object({
   email: Yup.string().email('Invalid email'),
@@ -13,13 +12,13 @@ const requiredSchema = Yup.object({
   lastName: Yup.string(),
 });
 
-function SubscribeForm({}: Props) {
+function SubscribeForm() {
   const translation = useTranslations('Newsletter');
   const [status, setStatus] = useState<number | null>(null);
   const [message, setMessage] = useState<string>('');
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
-  const [run, setRun] = useState<boolean>(false);
+  //const [run, setRun] = useState<boolean>(false);
   const [totalCounts, setTotalCounts] = useState<number>(400);
   const [dimensions, setDimensions] = useState({
     width: 0,
@@ -46,10 +45,12 @@ function SubscribeForm({}: Props) {
           setButtonDisabled(true);
           if (values?.email === '') {
             setMessage('');
+            setSubmitting(true);
             setTimeout(() => {
               setButtonDisabled(false);
               setMessage(translation('errorJoiningNewsletter'));
-            }, 300);
+              setSubmitting(false);
+            }, 400);
             return;
           }
           try {
@@ -69,30 +70,36 @@ function SubscribeForm({}: Props) {
               console.log(datas);
               setStatus(datas.status);
               setMessage('');
+              setSubmitting(true);
               setTimeout(() => {
                 setButtonDisabled(false);
                 setMessage(translation('errorJoiningNewsletter'));
-              }, 300);
+                setSubmitting(false);
+              }, 400);
               return;
             }
 
             setStatus(201);
             setMessage('');
-            setRun(true);
+            setSubmitting(true);
+            //setRun(true);
             setTimeout(() => {
               setTotalCounts(0);
               resetForm();
               setButtonDisabled(false);
               setMessage(translation('confirmationEmail'));
-            }, 300);
+              setSubmitting(false);
+            }, 400);
             setTotalCounts(400);
           } catch (error) {
             setStatus(500);
             setMessage('');
+            setSubmitting(true);
             setTimeout(() => {
               setButtonDisabled(false);
               setMessage(translation('errorJoiningNewsletter'));
-            }, 300);
+              setSubmitting(false);
+            }, 400);
           }
         }}
       >
@@ -136,7 +143,7 @@ function SubscribeForm({}: Props) {
             type="submit"
             disabled={buttonDisabled}
           >
-            {submitting ? 'Submitting' : translation('submit')}
+            {submitting ? translation('submitting') : translation('submit')}
           </button>
 
           {message && (

@@ -34,7 +34,7 @@ const Projects = async ({ category }: { category?: string }) => {
         {projects
           .filter((project) => project.acf.language.slug === locale)
           .filter((project) =>
-            category === 'all'
+            !category || category === 'all'
               ? true
               : project.acf.profession_type.slug === category,
           )

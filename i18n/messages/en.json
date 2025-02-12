@@ -25,8 +25,16 @@
     "optOut": "Unsubscribe (Opt-Out): You can unsubscribe from this newsletter at any time. You will find an unsubscribe link in every newsletter.",
     "optionalNameDeclaration": "Entering your first name and surname is optional.",
     "submit": "Submit",
+    "submitting": "Submitting",
     "privacyInformationInfo": "Further information about the newsletter and your options for revocation can be found in the privacy policy.",
     "confirmationEmail": "Thank you for your interest! You will receive a confirmation e-mail immediately. Please click on the link in this e-mail to activate your registration.",
     "errorJoiningNewsletter": "Error joining the newsletter. Please try again, or contact me directly at simeon.ohlsen@test.at"
+  },
+  "DynamicProjects": {
+    "categories": "Categories",
+    "dance": "Dance",
+    "pianism": "Pianism",
+    "choirmastering": "Choirmastering",
+    "allProjects": "All Projects"
   }
 }

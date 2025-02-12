@@ -25,7 +25,7 @@ const ProjectsCard = ({
         {professionsType}
       </h2>
       <h2 className="text-center mb-[2px] text-xl">{title}</h2>
-      <p className="text-center font-mont text-xs mb-5">
+      <p className="text-center font-mont text-xs mb-3">
         {locale === 'en' ? 'Published on:' : 'Veröffentlicht am:'}{' '}
         {publishedOnAndBy}
       </p>
