@@ -19,19 +19,19 @@ function SubscribeForm() {
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
   //const [run, setRun] = useState<boolean>(false);
-  const [totalCounts, setTotalCounts] = useState<number>(400);
-  const [dimensions, setDimensions] = useState({
+  // const [totalCounts, setTotalCounts] = useState<number>(400);
+  /* const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
-  });
+  });  */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const { innerWidth: width, innerHeight: height } = window;
     setDimensions({
       width,
       height,
     });
-  }, []);
+  }, []); */
   return (
     <div className="flex flex-col space-y-8 md:w-[500px]">
       <Formik
@@ -84,14 +84,14 @@ function SubscribeForm() {
             setSubmitting(true);
             //setRun(true);
             setTimeout(() => {
-              setTotalCounts(0);
+              //setTotalCounts(0);
               resetForm();
               setButtonDisabled(false);
               setMessage(translation('confirmationEmail'));
               setSubmitting(false);
             }, 400);
-            setTotalCounts(400);
-          } catch (error) {
+            //setTotalCounts(400);
+          } catch {
             setStatus(500);
             setMessage('');
             setSubmitting(true);
