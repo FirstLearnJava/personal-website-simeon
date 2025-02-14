@@ -24,7 +24,13 @@ interface Project {
 const Projects = async ({ category }: { category?: string }) => {
   console.log(category);
   if (reqURL) {
-    const req = await fetch(reqURL);
+    const req = await fetch(reqURL, {
+      headers: {
+        Cookie: '__test=59ba3b97a01079c23aef713f5891985f',
+        'User-Agent': 'Mozilla/5.0',
+      },
+      cache: 'no-store', // Prevents caching issues (optional)
+    });
     const projects: Project[] = await req.json();
 
     const locale = await getLocale();
