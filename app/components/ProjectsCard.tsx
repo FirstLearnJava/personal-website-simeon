@@ -35,6 +35,7 @@ const ProjectsCard = ({
         width={600}
         height={600}
         className="rounded-sm max-w-[h-600px] max-h-[600px] object-contain"
+        priority={true}
       />
       <p className="font-mont text-sm mt-4 mb-3">{article}</p>
     </div>

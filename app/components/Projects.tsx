@@ -1,6 +1,8 @@
 import React from 'react';
 import ProjectsCard from './ProjectsCard';
 import { getLocale } from 'next-intl/server';
+import https from 'https';
+import fetchWordpressData from '../actions/fetchWordpressData';
 const reqURL: string | undefined = process.env.CMS_API_URL;
 
 interface Project {
@@ -21,18 +23,24 @@ interface Project {
   };
 }
 
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
+
 const Projects = async ({ category }: { category?: string }) => {
   console.log(category);
   if (reqURL) {
     const req = await fetch(reqURL, {
       headers: {
-        Cookie: '__test=59ba3b97a01079c23aef713f5891985f',
-        'User-Agent': 'Mozilla/5.0',
+        Cookie: '__test=5f7651e5b4ea4b705b8629c5f60f071c',
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
       },
       cache: 'no-store', // Prevents caching issues (optional)
     });
-    const projects: Project[] = await req.json();
 
+    const projects: Project[] = await req.json();
+    //const projects: Project[] = await fetchWordpressData(reqURL);
     const locale = await getLocale();
 
     return (
