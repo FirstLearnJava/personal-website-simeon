@@ -1,9 +1,14 @@
 import { useTranslations } from 'next-intl';
-import Head from 'next/head';
 import Image from 'next/image';
 import homepageCover from '../../public/homepage/DancePerformanceMuk.jpg';
 import Projects from '../components/Projects';
+import { Metadata } from 'next';
 // import { Link } from '@/i18n/routing';
+
+export const metadata: Metadata = {
+  title: 'Simeon Ohlsen | Personal Page',
+  description: `Simeon Ohlsen's Homepage `,
+};
 
 export default function HomePage() {
   // Determine translation based on locale, fallback to "en" if invalid
@@ -11,10 +16,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>Simeon Ohlsen | Personal Page</title>
-        <meta name="description" content="homepage"></meta>
-      </Head>
       <div className="w-full flex items-center flex-col">
         <h1 className="text-[32px]">Simeon Ohlsen</h1>
 

@@ -8,7 +8,7 @@ export interface ProjectsCard {
   publishedOnAndBy: string;
   imageUrl: string;
   article: string;
-  locale: string;
+  locale: string | undefined;
 }
 
 const ProjectsCard = ({
