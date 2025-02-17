@@ -1,6 +1,12 @@
+import Projects from './Projects';
+
 const reqURL: string | undefined = process.env.CMS_API_URL;
 
-export default async function fetchWordpressData() {
+export default async function ProjectsWrapper({
+  category,
+}: {
+  category?: string;
+}) {
   if (reqURL) {
     const req = await fetch(reqURL, {
       cache: 'force-cache',
@@ -10,8 +16,6 @@ export default async function fetchWordpressData() {
       req.status;
     }
     const data = await req.json();
-    return data;
+    return <Projects data={data} category={category} />;
   }
 }
-
-//fetchWordpressData().then((data) => console.log(data));

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ProjectsCard from './ProjectsCard';
 import https from 'https';
 import { Cookies } from 'react-cookie';
-const reqURL: string | undefined = process.env.NEXT_PUBLIC_CMS_API_URL;
+//const reqURL: string | undefined = process.env.NEXT_PUBLIC_CMS_API_URL;
 
 interface Project {
   id: number;
@@ -28,13 +28,14 @@ const agent = new https.Agent({
   rejectUnauthorized: false,
 });
 // got rid of async for client side testing
-const Projects = ({ category }: { category?: string }) => {
-  const [projects, setProjects] = useState<Project[] | undefined>(undefined);
+const Projects = ({ category, data }: { category?: string; data: [] }) => {
+  //const [projects, setProjects] = useState<Project[] | undefined>(undefined);
+  const projects: Project[] = data;
   const [locale, setLocale] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     console.log('useEffect running');
-    async function loadData() {
+    /* async function loadData() {
       console.log('reqURL:', reqURL);
       if (reqURL) {
         try {
@@ -59,7 +60,7 @@ const Projects = ({ category }: { category?: string }) => {
         }
       }
     }
-    loadData();
+    loadData(); */
   }, []);
   useEffect(() => {
     const cookies = new Cookies();

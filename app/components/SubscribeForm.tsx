@@ -67,7 +67,6 @@ function SubscribeForm() {
             });
             const datas = await response.json();
             if (datas.status >= 400) {
-              console.log(datas);
               setStatus(datas.status);
               setMessage('');
               setSubmitting(true);

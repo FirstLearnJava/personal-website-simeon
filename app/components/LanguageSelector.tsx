@@ -18,7 +18,6 @@ const LanguageSelector = () => {
   const pathWithoutLocale = pathname.slice(3);
   //const currentLocale = locale;
   //const params = useParams();
-  console.log(pathWithoutLocale);
 
   const changeLanguage = (locale: string) => {
     router.replace(`/${pathWithoutLocale}`, { locale: locale });
@@ -76,11 +75,5 @@ const LanguageSelector = () => {
     </Fragment>
   );
 };
-
-/* onClick={(event) => {
-  setCurrentLanguage(event.currentTarget.value);
-  console.log(currentLanguage);
-  changeLanguage();
-}} */
 
 export default LanguageSelector;

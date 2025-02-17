@@ -2,6 +2,8 @@ import Projects from '@/app/components/Projects';
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import fetchWordpressData from '@/app/actions/fetchWordpressData';
+import ProjectsWrapper from '@/app/components/ProjectsWrapper';
 
 export default function ProjectPage(params: {
   params: { category?: string; locale: string };
@@ -12,6 +14,7 @@ export default function ProjectPage(params: {
   const styleWhenCategorySelected = 'font-semibold !border-gray-500';
   const styleOnCategoryHover = 'hover:font-medium hover:border-gray-400';
   const t = useTranslations('DynamicProjects');
+  const wpData = fetchWordpressData();
 
   return (
     <div className="flex justify-center text-base gap-[200px] -ml-[300px] ">
@@ -43,7 +46,7 @@ export default function ProjectPage(params: {
         </ul>
       </div>
 
-      <Projects category={category} />
+      <ProjectsWrapper category={category} />
     </div>
   );
 }
