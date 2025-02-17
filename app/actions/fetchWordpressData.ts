@@ -7,11 +7,10 @@ export default async function fetchWordpressData() {
       next: { revalidate: 600 },
     });
     if (!req.ok) {
-      req.status;
+      console.log(req.status);
+      return req.status;
     }
     const data = await req.json();
     return data;
   }
 }
-
-//fetchWordpressData().then((data) => console.log(data));
