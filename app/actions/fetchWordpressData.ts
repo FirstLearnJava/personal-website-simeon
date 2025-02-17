@@ -7,7 +7,6 @@ export default async function fetchWordpressData() {
       next: { revalidate: 600 },
     });
     if (!req.ok) {
-      console.log(req.status);
       return req.status;
     }
     const data = await req.json();

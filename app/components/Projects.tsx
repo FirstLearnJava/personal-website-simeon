@@ -25,20 +25,24 @@ interface Project {
 const Projects = ({ category, data }: { category?: string; data: [] }) => {
   const projects: Project[] = data;
   const [locale, setLocale] = useState<string>('en');
-  console.log('regular locale:', locale);
 
   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
-    if (localeFromCookie) {
+    // TEMPORARY
+    // cookie gets checked, if there is already a local cookie in the browser, the content should be adapted accordingly
+
+    if (
+      localeFromCookie !== locale &&
+      (localeFromCookie === 'en' || localeFromCookie === 'de')
+    ) {
       setLocale(localeFromCookie);
     }
-    console.log('useEffect locale:', locale);
   }, []);
   return (
     <div>
       {!projects ? (
-        <div>Projects undefined/not fetched</div>
+        <div>There is an issue with the projects.</div>
       ) : (
         projects
           .filter((project) => project.acf.language.slug === locale)
