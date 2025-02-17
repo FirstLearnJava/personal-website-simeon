@@ -25,13 +25,16 @@ interface Project {
 const Projects = ({ category, data }: { category?: string; data: [] }) => {
   const projects: Project[] = data;
   const [locale, setLocale] = useState<string>('en');
+  console.log('regular locale:', locale);
 
   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
-    setLocale(localeFromCookie);
+    if (localeFromCookie) {
+      setLocale(localeFromCookie);
+    }
+    console.log('useEffect locale:', locale);
   }, []);
-  console.log(projects);
   return (
     <div>
       {!projects ? (
