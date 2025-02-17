@@ -29,8 +29,6 @@ const Projects = ({ category, data }: { category?: string; data: [] }) => {
   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
-    // TEMPORARY
-    // cookie gets checked, if there is already a local cookie in the browser, the content should be adapted accordingly
 
     if (
       localeFromCookie !== locale &&
