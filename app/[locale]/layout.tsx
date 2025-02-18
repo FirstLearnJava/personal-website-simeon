@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import '../globals.css';
 import Header from '@/app/components/Header';
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
           <Header />
           <main className="md:px-32 md:pt-[72px] md:pb-[36px] flex-grow">
             {children}
+            <SpeedInsights />
           </main>
           <Footer />
         </NextIntlClientProvider>
