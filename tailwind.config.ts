@@ -13,8 +13,8 @@ export default {
         foreground: 'var(--foreground)',
       },
       fontFamily: {
-        lora: 'var(--lora)',
-        mont: 'var(--mont)',
+        lora: 'var(--font-lora)',
+        mont: 'var(--font-mont)',
       },
     },
   },

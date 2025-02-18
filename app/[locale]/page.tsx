@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import homepageCover from '../../public/homepage/DancePerformanceMuk.jpg';
-import Projects from '../components/Projects';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 // import { Link } from '@/i18n/routing';
