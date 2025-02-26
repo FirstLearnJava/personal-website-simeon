@@ -1,4 +1,3 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import '../globals.css';
 import Header from '@/app/components/Header';
@@ -44,14 +43,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${mont.variable} ${lora.variable} min-w-screen min-h-screen flex flex-col z-0 bg-[#fdfbfb]`}
+        className={`${mont.variable} ${lora.variable} min-w-screen min-h-screen flex flex-col z-0 ] bg-[--background]`}
       >
-        {/* <SpeedInsights /> */}
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main className="md:px-32 md:pt-[72px] md:pb-[36px] flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

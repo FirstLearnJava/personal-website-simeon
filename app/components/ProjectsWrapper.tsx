@@ -1,5 +1,5 @@
 import fetchWordpressData from '../actions/fetchWordpressData';
-import Projects from './Projects';
+import ProjectsAsGrid from './ProjectsAsGrid';
 
 export default async function ProjectsWrapper({
   category,
@@ -7,5 +7,5 @@ export default async function ProjectsWrapper({
   category?: string;
 }) {
   const data = await fetchWordpressData();
-  return <Projects data={data} category={category} />;
+  return <ProjectsAsGrid data={data} category={category} />;
 }

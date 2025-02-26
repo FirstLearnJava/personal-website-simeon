@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import ProjectsCard from './ProjectsCard';
 import { Cookies } from 'react-cookie';
+import ProjectsCard from './ProjectsCard';
 
 interface Project {
+  title: { rendered: string };
   id: number;
   slug: string;
   acf: {
@@ -22,8 +23,14 @@ interface Project {
   };
 }
 
-const Projects = ({ category, data }: { category?: string; data: [] }) => {
-  const projects: Project[] = data;
+const Projects = ({
+  category,
+  data,
+}: {
+  category?: string;
+  data: Project[];
+}) => {
+  const projects = data;
   const [locale, setLocale] = useState<string>('en');
 
   useEffect(() => {

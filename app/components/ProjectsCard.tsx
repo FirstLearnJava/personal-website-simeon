@@ -29,14 +29,16 @@ const ProjectsCard = ({
         {locale === 'en' ? 'Published on:' : 'Veröffentlicht am:'}{' '}
         {publishedOnAndBy}
       </p>
-      <Image
-        alt="Simeon leading a choir"
-        src={imageUrl}
-        width={600}
-        height={600}
-        className="rounded-sm max-w-[h-600px] max-h-[600px] object-contain"
-        priority={true}
-      />
+      <div className="flex justify-center">
+        <Image
+          alt={title}
+          src={imageUrl}
+          width={600}
+          height={600}
+          className="rounded-sm max-w-[h-600px] max-h-[600px] object-contain"
+          priority={true}
+        />
+      </div>
       <p className="font-mont text-sm mt-4 mb-3">{article}</p>
     </div>
   );

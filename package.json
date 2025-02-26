@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.2.0",
     "formik": "^2.4.6",
     "next": "15.1.6",
     "next-intl": "^3.26.3",
     "react": "19.0.0",
     "react-cookie": "^7.2.2",
     "react-dom": "19.0.0",
+    "sass": "^1.85.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {
