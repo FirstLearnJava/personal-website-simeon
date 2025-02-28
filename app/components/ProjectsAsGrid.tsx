@@ -3,25 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Cookies } from 'react-cookie';
 import ProjectsCardAsGrid from './ProjectsCardAsGrid';
-
-interface Project {
-  title: { rendered: string };
-  id: number;
-  slug: string;
-  acf: {
-    profession_type: {
-      name: string;
-      slug: string;
-    };
-    title: string;
-    published_on_and_by: string;
-    image: string;
-    article: string;
-    language: {
-      slug: string;
-    };
-  };
-}
+import { Project } from '../actions/fetchWordpressData';
 
 const ProjectsAsGrid = ({
   category,
@@ -45,8 +27,8 @@ const ProjectsAsGrid = ({
     }
   }, []);
   return (
-    <>
-      <div className="grid grid-cols-2 gap-[7vw]">
+    <div className="">
+      <div className="grid grid-cols-2 justify-items-center">
         {!projects ? (
           <div>
             Projects can't be loaded at the moment. Please try again later.
@@ -89,6 +71,7 @@ const ProjectsAsGrid = ({
                     publishedOnAndBy={project.acf.published_on_and_by}
                     imageUrl={project.acf.image}
                     article={project.acf.article}
+                    aspectRatio={project.acf.aspect_ratio.slug}
                     locale={locale}
                   />
                 </div>
@@ -96,7 +79,7 @@ const ProjectsAsGrid = ({
             })
         )}
       </div>
-    </>
+    </div>
   );
 };
 

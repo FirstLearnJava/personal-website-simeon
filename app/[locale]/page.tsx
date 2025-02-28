@@ -4,7 +4,6 @@ import Image from 'next/image';
 import homepageCover from '../../public/homepage/coverImage1.jpg';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
-import styles from './page.module.scss';
 
 export const metadata: Metadata = {
   title: 'Simeon Ohlsen | Personal Page',
@@ -46,8 +45,11 @@ export default function HomePage() {
       </div>
 
       <div className="z-20 w-full flex items-center flex-col">
-        <div className="flex justify-center w-full bg-[#f5f6fd] ">
-          {/* original brighter bg-color: /* F9FAFF * */}
+        <div
+          className={`flex-col flex items-center w-full bg-projectBackground pt-32 pb-16`}
+        >
+          {/* <h2 className="font-lora text-4xl mb-12 text-white">Projects</h2> */}
+          {/* original brighter bg-color: /* F9FAFF & #f7fdf5 */}
           <ProjectsWrapper />
         </div>
       </div>

@@ -1,25 +1,26 @@
 const reqURL: string | undefined = process.env.CMS_API_URL;
 
-export default async function fetchWordpressData() {
-  interface Project {
-    title: { rendered: string };
-    id: number;
-    slug: string;
-    acf: {
-      profession_type: {
-        name: string;
-        slug: string;
-      };
-      title: string;
-      published_on_and_by: string;
-      image: string;
-      article: string;
-      language: {
-        slug: string;
-      };
+export interface Project {
+  title: { rendered: string };
+  id: number;
+  slug: string;
+  acf: {
+    profession_type: {
+      name: string;
+      slug: string;
     };
-  }
+    title: string;
+    aspect_ratio: { slug: string };
+    published_on_and_by: string;
+    image: string;
+    article: string;
+    language: {
+      slug: string;
+    };
+  };
+}
 
+export default async function fetchWordpressData() {
   let allData: Project[] = [];
   let page = 1;
 

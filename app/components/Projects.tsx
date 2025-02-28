@@ -3,25 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Cookies } from 'react-cookie';
 import ProjectsCard from './ProjectsCard';
-
-interface Project {
-  title: { rendered: string };
-  id: number;
-  slug: string;
-  acf: {
-    profession_type: {
-      name: string;
-      slug: string;
-    };
-    title: string;
-    published_on_and_by: string;
-    image: string;
-    article: string;
-    language: {
-      slug: string;
-    };
-  };
-}
+import { Project } from '../actions/fetchWordpressData';
 
 const Projects = ({
   category,

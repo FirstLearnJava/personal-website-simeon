@@ -1,81 +1,5 @@
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import React from 'react';
-import { useState, useRef, useEffect } from 'react';
-
-export interface ProjectsCard {
-  professionsType: string;
-  title: string;
-  publishedOnAndBy: string;
-  imageUrl: string;
-  article: string;
-  locale: string | undefined;
-}
-
-const ProjectsCardAsGrid = ({
-  professionsType,
-  title,
-  publishedOnAndBy,
-  imageUrl,
-  article,
-  locale,
-}: ProjectsCard) => {
-  const [isOverflowed, setIsOverFlowed] = useState(false);
-  const textRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const element = textRef.current;
-    if (element) {
-      const computedStyle = window.getComputedStyle(element);
-      const lineHeight = parseFloat(computedStyle.lineHeight);
-      const maxHeight = lineHeight * 4;
-      setIsOverFlowed(element.offsetHeight > maxHeight);
-    }
-  }, [article]);
-
-  return (
-    <div className=" border-gray-300  flex flex-col items-center justify-start max-w-[600px]  bg-white rounded-[10px] p-9 relative">
-      <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[2px] uppercase font-mont tracking-wider">
-        {professionsType}
-      </h2>
-      <h2 className="text-center mb-[2px] text-xl max-w-[30vw]">{title}</h2>
-      <p className="text-center font-mont text-xs mb-3 max-w-[30vw]">
-        {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
-        {publishedOnAndBy}
-      </p>
-      <div className="flex justify-center">
-        <Image
-          alt={title}
-          src={imageUrl}
-          width={600}
-          height={600}
-          className="rounded-sm max-w-[30vw] max-h-[600px] object-contain"
-          priority={true}
-        />
-      </div>
-      <div className="">
-        <p
-          className="font-mont text-sm mt-4 mb-3 max-w-[30vw] line-clamp-4"
-          ref={textRef}
-        >
-          {article}
-          {isOverflowed && (
-            <Link
-              href="/projects"
-              className="bg-white font-medium inline absolute bottom-[16px] left-9 hover:font-semibold"
-            >
-              weiterlesen...
-            </Link>
-          )}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default ProjectsCardAsGrid;
-/* import { Link } from '@/i18n/routing';
-import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 
 export interface ProjectsCard {
@@ -85,6 +9,7 @@ export interface ProjectsCard {
   imageUrl: string;
   article: string;
   locale: string | undefined;
+  aspectRatio: string;
 }
 
 const ProjectsCardAsGrid = ({
@@ -94,69 +19,110 @@ const ProjectsCardAsGrid = ({
   imageUrl,
   article,
   locale,
+  aspectRatio,
 }: ProjectsCard) => {
-  const [isOverflowed, setIsOverFlowed] = useState(false);
-  const textRef = useRef<HTMLParagraphElement>(null);
+  const [isLandscapeOverflowed, setIsLandscapeOverflowed] = useState(false);
+  const textRefLandscape = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    const element = textRef.current;
-    if (element) {
-      const computedStyle = window.getComputedStyle(element);
-      const lineHeight = parseFloat(computedStyle.lineHeight); // Get dynamic line-height
-      const maxHeight = lineHeight * 4; // Set maxHeight based on lineHeight and maxLines
+    const element = textRefLandscape.current;
+    const calcOverflow = () => {
+      if (element) {
+        const isOverflowing = element.scrollHeight > element.clientHeight;
+        setIsLandscapeOverflowed(isOverflowing);
+      }
+    };
+    calcOverflow();
+    window.addEventListener('resize', calcOverflow);
 
-      // Log for debugging
-      console.log('scrollHeight:', element.scrollHeight);
-      console.log('clientHeight:', element.clientHeight);
-      console.log('offsetHeight:', element.offsetHeight);
-      console.log('Calculated maxHeight:', maxHeight);
+    return () => window.removeEventListener('resize', calcOverflow);
+  }, [article]);
 
-      // Check if the element is overflowing
-      const isOverflowing = element.scrollHeight > element.clientHeight;
-      setIsOverFlowed(isOverflowing);
-    }
-  }, [article]); // Runs whenever the article changes
-
-  return (
-    <div className="border-gray-300 flex flex-col items-center justify-start max-w-[600px] bg-white rounded-[10px] p-9 relative">
-      <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[2px] uppercase font-mont tracking-wider">
-        {professionsType}
-      </h2>
-      <h2 className="text-center mb-[2px] text-xl max-w-[30vw]">{title}</h2>
-      <p className="text-center font-mont text-xs mb-3 max-w-[30vw]">
-        {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
-        {publishedOnAndBy}
-      </p>
-      <div className="flex justify-center">
-        <Image
-          alt={title}
-          src={imageUrl}
-          width={600}
-          height={600}
-          className="rounded-sm max-w-[30vw] max-h-[600px] object-contain"
-          priority={true}
-        />
-      </div>
-      <div className="relative max-w-[30vw]">
+  if (aspectRatio === 'landscape-format') {
+    return (
+      <div className="border-[#ececec] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-7 pt-5 pb-10 relative w-[36vw]">
+        <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full">
+          {professionsType}
+        </h2>
+        <h2 className="text-center mb-[2px] text-xl ">{title}</h2>
+        <p className="text-center font-mont text-xs mb-4 ">
+          {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
+          {publishedOnAndBy}
+        </p>
+        <div className="">
+          <Image
+            alt={title}
+            src={imageUrl}
+            width={600}
+            height={600}
+            className="rounded-[4px] object-contain"
+            priority={true}
+          />
+        </div>
         <p
-          ref={textRef}
-          className="font-mont text-sm mt-4 mb-3 line-clamp-4"
-          // Ensure line-height is explicitly set
+          ref={textRefLandscape}
+          className="font-mont text-sm mt-3 line-clamp-4"
         >
           {article}
         </p>
-
-        {isOverflowed && (
-          <Link
-            href="/projects"
-            className="bg-white font-medium inline absolute bottom-[-20px] left-0 hover:font-semibold"
-          >
-            weiterlesen...
-          </Link>
-        )}
+        <div className="relative w-full">
+          {isLandscapeOverflowed && (
+            <Link
+              href="/projects"
+              className="bg-white font-medium inline absolute  left-0 hover:font-semibold"
+            >
+              weiterlesen...
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  if (aspectRatio === 'portrait-format') {
+    return (
+      <div className="border-[#ececec] border flex flex-col w-[36vw] bg-white rounded-[6px] pt-5 px-7">
+        <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider">
+          {professionsType}
+        </h2>
+
+        <h2 className="text-xl text-center mb-[2px]">{title}</h2>
+        <p className=" font-mont text-xs mb-4 text-center">
+          {locale === 'en' ? 'Published on ' : 'Veröffentlicht am '}
+          {publishedOnAndBy}
+        </p>
+        <div className="flex justify-center gap-[22px] mb-8 h-full">
+          <div className="mt-1">
+            <div className={`max-h-[500px]`}>
+              <p
+                className="font-mont text-sm  mb-2 line-clamp-[18]"
+                ref={textRefLandscape}
+              >
+                {article}
+              </p>
+            </div>
+
+            {isLandscapeOverflowed && (
+              <Link
+                href="/projects"
+                className="bg-white inline font-medium  hover:font-semibold"
+              >
+                weiterlesen...
+              </Link>
+            )}
+          </div>
+
+          <Image
+            alt={title}
+            src={imageUrl}
+            width={600}
+            height={600}
+            className="rounded-[6px] max-h-[600px] object-contain w-[56%]"
+            priority={true}
+          />
+        </div>
+      </div>
+    );
+  }
 };
 
-export default ProjectsCardAsGrid; */
+export default ProjectsCardAsGrid;

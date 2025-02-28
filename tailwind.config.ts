@@ -11,6 +11,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        projectBackground: '#f1f5f8',
       },
       fontFamily: {
         lora: 'var(--font-lora)',

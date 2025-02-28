@@ -5,7 +5,7 @@ import React from 'react';
 const Footer = () => {
   const t = useTranslations('Footer');
   return (
-    <footer className="border-t-[1px] border-[#9f9f9f] pt-4 pb-3 sm:px-20 font-medium">
+    <footer className="border-t-[1px] border-[#9f9f9f] pt-4 pb-3 sm:px-20 font-medium z-10 bg-white">
       <ul className="flex w-full justify-center gap-8">
         <li>
           <Link href="/contact">{t('contact')}</Link>
