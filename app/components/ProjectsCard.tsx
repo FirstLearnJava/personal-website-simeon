@@ -20,13 +20,13 @@ const ProjectsCard = ({
   locale,
 }: ProjectsCard) => {
   return (
-    <div className="border-b border-gray-400 pb-6 flex flex-col items-center justify-center max-w-[600px] mt-12">
+    <div className="pb-6 flex flex-col items-center justify-center max-w-[600px] mt-12">
       <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[2px] uppercase font-mont tracking-wider">
         {professionsType}
       </h2>
       <h2 className="text-center mb-[2px] text-xl">{title}</h2>
       <p className="text-center font-mont text-xs mb-3">
-        {locale === 'en' ? 'Published on:' : 'Veröffentlicht am:'}{' '}
+        {locale === 'en' ? 'Published on:' : 'Veröffentlicht am:'}
         {publishedOnAndBy}
       </p>
       <div className="flex justify-center">

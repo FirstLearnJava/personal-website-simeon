@@ -11,54 +11,46 @@ const Projects = ({
   paramsId: number;
   paramsLocale: string;
 }) => {
-  const projects = data;
-  const projectById = data.find((project) => project.id == paramsId);
-  console.log(projectById);
+  const projectById: Project | undefined = data.find(
+    (project) => project.id == paramsId,
+  );
+
+  if (!projectById) {
+    return <div>The project you are trying to access was not found.</div>;
+  }
+
+  const checkProfessionTypeForTranslate = () => {
+    if (paramsLocale === 'en') {
+      return projectById.acf.profession_type.name;
+    }
+    if (paramsLocale === 'de') {
+      if (projectById.acf.profession_type.name === 'Dance') {
+        return 'Tanz';
+      }
+      if (projectById.acf.profession_type.name === 'Choirmastering') {
+        return 'Chorleitung';
+      }
+      if (projectById.acf.profession_type.name === 'Pianism') {
+        return 'Piano';
+      } else {
+        return projectById.acf.profession_type.name;
+      }
+    } else {
+      return projectById.acf.profession_type.name;
+    }
+  };
 
   return (
-    <div>
-      {!projects ? (
-        <div>There is an issue with the project.</div>
-      ) : (
-        projects
-          .filter((project) => project.acf.language.slug === paramsLocale)
-
-          .map((project) => {
-            const checkProfessionTypeForTranslate = () => {
-              if (paramsLocale === 'en') {
-                return project.acf.profession_type.name;
-              }
-              if (paramsLocale === 'de') {
-                if (project.acf.profession_type.name === 'Dance') {
-                  return 'Tanz';
-                }
-                if (project.acf.profession_type.name === 'Choirmastering') {
-                  return 'Chorleitung';
-                }
-                if (project.acf.profession_type.name === 'Pianism') {
-                  return 'Piano';
-                } else {
-                  return project.acf.profession_type.name;
-                }
-              } else {
-                return project.acf.profession_type.name;
-              }
-            };
-            return (
-              <div key={project.slug}>
-                <ProjectsCard
-                  //professionsType={project.acf.profession_type.name}
-                  professionsType={checkProfessionTypeForTranslate()}
-                  title={project.acf.title}
-                  publishedOnAndBy={project.acf.published_on_and_by}
-                  imageUrl={project.acf.image}
-                  article={project.acf.article}
-                  locale={paramsLocale}
-                />
-              </div>
-            );
-          })
-      )}
+    <div key={projectById.slug}>
+      <ProjectsCard
+        //professionsType={projectById.acf.profession_type.name}
+        professionsType={checkProfessionTypeForTranslate()}
+        title={projectById.acf.title}
+        publishedOnAndBy={projectById.acf.published_on_and_by}
+        imageUrl={projectById.acf.image}
+        article={projectById.acf.article}
+        locale={paramsLocale}
+      />
     </div>
   );
 };

@@ -24,18 +24,22 @@ export const metadata: Metadata = {
   description: `Simeon Ohlsen's introduction and projects `,
 };
 
+type Params = Promise<{ locale: string }>;
+
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale?: string };
+  params: Params;
 }) {
-  if (!params?.locale) {
+  const awaitedParams = await params;
+
+  if (!awaitedParams?.locale) {
     notFound();
   }
 
-  const locale = params.locale;
+  const locale = awaitedParams.locale;
   if (!routing.locales.includes(locale as never)) {
     notFound();
   }

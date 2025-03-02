@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 
 export interface ProjectsCard {
+  id: number;
   professionsType: string;
   title: string;
   publishedOnAndBy: string;
@@ -13,6 +14,7 @@ export interface ProjectsCard {
 }
 
 const ProjectsCardAsGrid = ({
+  id,
   professionsType,
   title,
   publishedOnAndBy,
@@ -51,16 +53,18 @@ const ProjectsCardAsGrid = ({
           {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
           {publishedOnAndBy}
         </p>
-        <div className="">
+
+        <Link href={`/project/${id}`} className="max-h-[600px] max-w-[600px]">
           <Image
             alt={title}
             src={imageUrl}
             width={600}
             height={600}
-            className="rounded-[4px] object-contain"
+            className="rounded-[4px] object-contain transition-opacity duration-300 ease-in-out hover:opacity-[0.90]"
             priority={true}
           />
-        </div>
+        </Link>
+
         <p
           ref={textRefLandscape}
           className="font-mont text-sm mt-3 line-clamp-4"
@@ -70,7 +74,7 @@ const ProjectsCardAsGrid = ({
         <div className="relative w-full">
           {isLandscapeOverflowed && (
             <Link
-              href="/project/1"
+              href={`/project/${id}`}
               className="bg-white font-medium inline absolute  left-0 hover:font-semibold"
             >
               weiterlesen...
@@ -93,7 +97,7 @@ const ProjectsCardAsGrid = ({
           {publishedOnAndBy}
         </p>
         <div className="flex justify-center gap-[22px] mb-8 h-full">
-          <div className="mt-1">
+          <div className="mt-1 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
                 className="font-mont text-sm  mb-2 line-clamp-[18]"
@@ -105,22 +109,26 @@ const ProjectsCardAsGrid = ({
 
             {isLandscapeOverflowed && (
               <Link
-                href="/project/1"
-                className="bg-white inline font-medium  hover:font-semibold"
+                href={`/project/${id}`}
+                className="bg-white inline font-medium hover:font-semibold"
               >
                 weiterlesen...
               </Link>
             )}
           </div>
-
-          <Image
-            alt={title}
-            src={imageUrl}
-            width={600}
-            height={600}
-            className="rounded-[6px] max-h-[600px] object-contain w-[56%]"
-            priority={true}
-          />
+          <Link
+            href={`/project/${id}`}
+            className="max-h-[600px] flex-shrink-0 w-[56%]"
+          >
+            <Image
+              alt={title}
+              src={imageUrl}
+              width={600}
+              height={600}
+              className="rounded-[6px] object-contain transition-opacity duration-300 ease-in-out hover:opacity-[0.90]"
+              priority={true}
+            />
+          </Link>
         </div>
       </div>
     );

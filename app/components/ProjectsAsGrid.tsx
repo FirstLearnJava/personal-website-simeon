@@ -76,7 +76,7 @@ const ProjectsAsGrid = ({
                   className={`${isLastOdd ? 'col-span-2 flex justify-center' : ''}`}
                 >
                   <ProjectsCardAsGrid
-                    //professionsType={project.acf.profession_type.name}
+                    id={project.id}
                     professionsType={checkProfessionTypeForTranslate()}
                     title={project.acf.title}
                     publishedOnAndBy={project.acf.published_on_and_by}
@@ -84,7 +84,6 @@ const ProjectsAsGrid = ({
                     article={project.acf.article}
                     aspectRatio={project.acf.aspect_ratio.slug}
                     locale={locale}
-                    //isLastOdd={isLastOdd}
                   />
                 </div>
               );
