@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Cookies } from 'react-cookie';
 import ProjectsCardAsGrid from './ProjectsCardAsGrid';
 import { Project } from '../actions/fetchWordpressData';
+import { usePathname } from '@/i18n/routing';
 
 const ProjectsAsGrid = ({
   category,
@@ -13,8 +14,9 @@ const ProjectsAsGrid = ({
   data: Project[];
 }) => {
   const projects = data;
+  const pathname = usePathname();
+  const isOnProjectsPath = pathname.includes('projects');
   const [locale, setLocale] = useState<string>('en');
-
   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
@@ -27,11 +29,14 @@ const ProjectsAsGrid = ({
     }
   }, []);
   return (
-    <div className="">
-      <div className="grid grid-cols-2 justify-items-center">
-        {!projects ? (
-          <div>
-            Projects can't be loaded at the moment. Please try again later.
+    <div className="h-full ">
+      <div className="grid grid-cols-2 gap-24">
+        {!Array.isArray(projects) || projects.length === 0 ? (
+          <div
+            className={`h-full text-2xl font-mont col-span-2 text-center italic pb-[7vh]  ${isOnProjectsPath ? 'pt-[10vh]' : ''}`}
+          >
+            <p>Projects can't be loaded at the moment.</p>
+            <p>Please try again later.</p>
           </div>
         ) : (
           projects
@@ -41,7 +46,10 @@ const ProjectsAsGrid = ({
                 ? true
                 : project.acf.profession_type.slug === category,
             )
-            .map((project) => {
+            .map((project, index, arr) => {
+              const isLastOdd =
+                arr.length % 2 !== 0 && index === arr.length - 1;
+
               const checkProfessionTypeForTranslate = () => {
                 if (locale === 'en') {
                   return project.acf.profession_type.name;
@@ -63,7 +71,10 @@ const ProjectsAsGrid = ({
                 }
               };
               return (
-                <div key={project.slug} className="grid">
+                <div
+                  key={project.slug}
+                  className={`${isLastOdd ? 'col-span-2 flex justify-center' : ''}`}
+                >
                   <ProjectsCardAsGrid
                     //professionsType={project.acf.profession_type.name}
                     professionsType={checkProfessionTypeForTranslate()}
@@ -73,6 +84,7 @@ const ProjectsAsGrid = ({
                     article={project.acf.article}
                     aspectRatio={project.acf.aspect_ratio.slug}
                     locale={locale}
+                    //isLastOdd={isLastOdd}
                   />
                 </div>
               );

@@ -40,7 +40,9 @@ const ProjectsCardAsGrid = ({
 
   if (aspectRatio === 'landscape-format') {
     return (
-      <div className="border-[#ececec] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-7 pt-5 pb-10 relative w-[36vw]">
+      <div
+        className={`border-[#dddddd] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-7 pt-5 pb-10 relative w-[36vw] h-full`}
+      >
         <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full">
           {professionsType}
         </h2>
@@ -68,7 +70,7 @@ const ProjectsCardAsGrid = ({
         <div className="relative w-full">
           {isLandscapeOverflowed && (
             <Link
-              href="/projects"
+              href="/project/1"
               className="bg-white font-medium inline absolute  left-0 hover:font-semibold"
             >
               weiterlesen...
@@ -80,7 +82,7 @@ const ProjectsCardAsGrid = ({
   }
   if (aspectRatio === 'portrait-format') {
     return (
-      <div className="border-[#ececec] border flex flex-col w-[36vw] bg-white rounded-[6px] pt-5 px-7">
+      <div className="border-[#ececec] border flex flex-col w-[36vw] bg-white rounded-[6px] pt-5 px-7 h-full">
         <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider">
           {professionsType}
         </h2>
@@ -103,7 +105,7 @@ const ProjectsCardAsGrid = ({
 
             {isLandscapeOverflowed && (
               <Link
-                href="/projects"
+                href="/project/1"
                 className="bg-white inline font-medium  hover:font-semibold"
               >
                 weiterlesen...

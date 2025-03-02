@@ -35,7 +35,7 @@ const ProjectsCard = ({
           src={imageUrl}
           width={600}
           height={600}
-          className="rounded-sm max-w-[h-600px] max-h-[600px] object-contain"
+          className="rounded-[4px] max-w-[h-600px] max-h-[600px] object-contain"
           priority={true}
         />
       </div>

@@ -14,12 +14,12 @@ export default function ProjectPage(params: {
   const t = useTranslations('DynamicProjects');
 
   return (
-    <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] ">
+    <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] min-h-[calc(100vh-61px-53px)]">
       <div className="w-[160px] ">
-        <div className="fixed w-[160px] bg-[#b9cbd8] h-full  border-black">
+        <div className="fixed w-[160px] bg-[#b9cbd8] h-full left-0">
           <div className="h-full flex flex-col mt-14 items-center">
             <div className="">
-              <h2 className="uppercase font-mont font-medium tracking-widest mb-[14px] text-[17px]">
+              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 text-[17px]">
                 {t('categories')}
               </h2>
               <ul
@@ -53,7 +53,7 @@ export default function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="flex-1">
+      <div className="my-14">
         <ProjectsWrapper category={category} />
       </div>
     </div>
