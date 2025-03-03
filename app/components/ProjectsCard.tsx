@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-//import choirmastering from '../../public/projects/Dirigieren-in-Kirche.jpg';
 
 export interface ProjectsCard {
   professionsType: string;
@@ -26,7 +25,7 @@ const ProjectsCard = ({
       </h2>
       <h2 className="text-center mb-[2px] text-xl">{title}</h2>
       <p className="text-center font-mont text-xs mb-3">
-        {locale === 'en' ? 'Published on:' : 'Veröffentlicht am:'}
+        {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
         {publishedOnAndBy}
       </p>
       <div className="flex justify-center">

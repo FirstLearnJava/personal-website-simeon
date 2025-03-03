@@ -35,16 +35,20 @@ export default function HomePage() {
           />
         </div>
 
-        <h1 className=" absolute text-[46px] top-[12.5%] left-[69%] text-white">
+        <h1 className=" absolute text-[46px] top-[12.5%] left-[67%] text-white">
           Simeon Ohlsen
         </h1>
 
-        <p className=" absolute font-mont text-[20px]  mt-1 top-[20%] left-[71%] text-white font-medium">
+        <p className=" absolute font-mont text-[20px]  mt-1 top-[20%] left-[69%] text-white font-medium">
           {translation('professionalSkills')}
         </p>
       </div>
 
       <div className="z-20 w-full flex items-center flex-col">
+        {/* <div className="bg-gradient-to-b from-[rgb(230,235,240)] w-full to-[rgb(241,245,248)] h-32"></div>
+        Example when transition point is not 50% bg-[linear-gradient(180deg,rgb(224,231,236)_32%,rgb(241,245,248)_100%)]
+        How to make a linear gradient with tailwind --> Use https://cssgradient.io/
+        */}
         <div
           className={`flex-col flex items-center w-full bg-projectBackground pt-32 pb-16`}
         >

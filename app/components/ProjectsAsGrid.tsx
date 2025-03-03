@@ -17,6 +17,17 @@ const ProjectsAsGrid = ({
   const pathname = usePathname();
   const isOnProjectsPath = pathname.includes('projects');
   const [locale, setLocale] = useState<string>('en');
+  console.log(category);
+  /*  const revisedCategory = ()=>{if(category === 'art-mediation'){
+     'art_mediation'};
+    else return category;
+  }} */
+  const revisedCategory = () => {
+    if (category === 'art-mediation') {
+      return 'art_mediation';
+    }
+    return category;
+  };
   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
@@ -42,9 +53,9 @@ const ProjectsAsGrid = ({
           projects
             .filter((project) => project.acf.language.slug === locale)
             .filter((project) =>
-              !category || category === 'all'
+              !revisedCategory() || revisedCategory() === 'all'
                 ? true
-                : project.acf.profession_type.slug === category,
+                : project.acf.profession_type.slug === revisedCategory(),
             )
             .map((project, index, arr) => {
               const isLastOdd =
@@ -58,11 +69,11 @@ const ProjectsAsGrid = ({
                   if (project.acf.profession_type.name === 'Dance') {
                     return 'Tanz';
                   }
-                  if (project.acf.profession_type.name === 'Choirmastering') {
-                    return 'Chorleitung';
+                  if (project.acf.profession_type.name === 'Art Mediation') {
+                    return 'Kunstvermittlung';
                   }
-                  if (project.acf.profession_type.name === 'Pianism') {
-                    return 'Piano';
+                  if (project.acf.profession_type.name === 'Music') {
+                    return 'Musik';
                   } else {
                     return project.acf.profession_type.name;
                   }
@@ -83,6 +94,7 @@ const ProjectsAsGrid = ({
                     imageUrl={project.acf.image}
                     article={project.acf.article}
                     aspectRatio={project.acf.aspect_ratio.slug}
+                    copyrightImage={project.acf.copyright_image}
                     locale={locale}
                   />
                 </div>

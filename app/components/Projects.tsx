@@ -27,11 +27,11 @@ const Projects = ({
       if (projectById.acf.profession_type.name === 'Dance') {
         return 'Tanz';
       }
-      if (projectById.acf.profession_type.name === 'Choirmastering') {
-        return 'Chorleitung';
+      if (projectById.acf.profession_type.name === 'Art Mediation') {
+        return 'Kunstvermittlung';
       }
-      if (projectById.acf.profession_type.name === 'Pianism') {
-        return 'Piano';
+      if (projectById.acf.profession_type.name === 'Music') {
+        return 'Musik';
       } else {
         return projectById.acf.profession_type.name;
       }

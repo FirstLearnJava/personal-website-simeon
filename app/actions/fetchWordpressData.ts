@@ -17,6 +17,7 @@ export interface Project {
     language: {
       slug: string;
     };
+    copyright_image?: string;
   };
 }
 

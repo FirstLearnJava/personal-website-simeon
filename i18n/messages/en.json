@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "professionalSkills": "Dancer | Pianist | Choirmaster"
+    "professionalSkills": "Dancer | Musician | Art Mediator"
   },
   "Header": {
     "home": "Home",
@@ -33,8 +33,8 @@
   "DynamicProjects": {
     "categories": "Categories",
     "dance": "Dance",
-    "pianism": "Pianism",
-    "choirmastering": "Choirmastering",
+    "music": "Music",
+    "artMediation": "Art Mediation",
     "allProjects": "All Projects"
   }
 }

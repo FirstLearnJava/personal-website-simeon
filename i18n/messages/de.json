@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "professionalSkills": "Tänzer | Pianist | Chorleiter"
+    "professionalSkills": "Tänzer | Musiker | Kunstvermittler"
   },
   "Header": {
     "home": "Home",
@@ -33,8 +33,8 @@
   "DynamicProjects": {
     "categories": "Kategorien",
     "dance": "Tanz",
-    "pianism": "Piano",
-    "choirmastering": "Chorleitung",
+    "music": "Musik",
+    "artMediation": "Kunstvermittlung",
     "allProjects": "Alle Projekte"
   }
 }

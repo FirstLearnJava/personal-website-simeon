@@ -11,6 +11,7 @@ export interface ProjectsCard {
   article: string;
   locale: string | undefined;
   aspectRatio: string;
+  copyrightImage: string | undefined;
 }
 
 const ProjectsCardAsGrid = ({
@@ -22,9 +23,17 @@ const ProjectsCardAsGrid = ({
   article,
   locale,
   aspectRatio,
+  copyrightImage,
 }: ProjectsCard) => {
   const [isLandscapeOverflowed, setIsLandscapeOverflowed] = useState(false);
   const textRefLandscape = useRef<HTMLParagraphElement>(null);
+  const checkCopyright = () => {
+    if (copyrightImage == undefined || copyrightImage === '') {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   useEffect(() => {
     const element = textRefLandscape.current;
@@ -43,7 +52,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'landscape-format') {
     return (
       <div
-        className={`border-[#dddddd] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-7 pt-5 pb-10 relative w-[36vw] h-full`}
+        className={`border-[#dddddd] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-7 pt-5 pb-10 relative w-[36vw] h-full `}
       >
         <h2 className="border-b-[1px] border-blue-900 text-center text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full">
           {professionsType}
@@ -60,14 +69,19 @@ const ProjectsCardAsGrid = ({
             src={imageUrl}
             width={600}
             height={600}
-            className="rounded-[4px] object-contain transition-opacity duration-300 ease-in-out hover:opacity-[0.90]"
+            className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out hover:opacity-[0.90]"
             priority={true}
           />
+          {checkCopyright() && (
+            <p className=" text-xs hover:cursor-default ml-[4px] ">
+              &copy; {copyrightImage}
+            </p>
+          )}
         </Link>
 
         <p
           ref={textRefLandscape}
-          className="font-mont text-sm mt-3 line-clamp-4"
+          className={`font-mont text-sm ${copyrightImage !== '' ? '-mt-[0px]' : 'mt-[16px]'}  line-clamp-5`}
         >
           {article}
         </p>
@@ -93,7 +107,7 @@ const ProjectsCardAsGrid = ({
 
         <h2 className="text-xl text-center mb-[2px]">{title}</h2>
         <p className=" font-mont text-xs mb-4 text-center">
-          {locale === 'en' ? 'Published on ' : 'Veröffentlicht am '}
+          {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
           {publishedOnAndBy}
         </p>
         <div className="flex justify-center gap-[22px] mb-8 h-full">
@@ -125,9 +139,14 @@ const ProjectsCardAsGrid = ({
               src={imageUrl}
               width={600}
               height={600}
-              className="rounded-[6px] object-contain transition-opacity duration-300 ease-in-out hover:opacity-[0.90]"
+              className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out hover:opacity-[0.90]"
               priority={true}
             />
+            {copyrightImage !== '' && (
+              <p className=" text-xs text-left hover:cursor-default ml-[2px]">
+                &copy; {copyrightImage}
+              </p>
+            )}
           </Link>
         </div>
       </div>
