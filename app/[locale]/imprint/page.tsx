@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function ImprintPage() {
   return (
-    <div className="flex justify-center font-mont text-base font-medium">
+    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[61px] pb-12">
       <div className="flex flex-col gap-4">
-        <h1 className="flex justify-center mb-8 text-4xl font-mont font-semibold mt-4">
+        <h1 className="flex justify-center mb-8 text-[42px] font-mont font-semibold mt-16">
           Impressum
         </h1>
-        <div className="*:mt-2">
+        <div className="*:mt-2 mt-5">
           <p>Informationen über den Diensteanbieter</p>
           <p>Simeon Ohlsen</p>
           <p>
@@ -74,13 +74,22 @@ export default function ImprintPage() {
         <h3 className="text-md font-semibold mt-2">
           Die Bilderrechte liegen bei:
         </h3>
-        <p>Fotograf Max Mustermann Fotografin Pia Musterfrau</p>
+        <p>Fotografin Marthe Lola Deutschmann</p>
+        <p>
+          Der/Die BesitzerIn der Bilderrechte der jeweiligen Projektbilder ist
+          namentlich unter dem Bild erwähnt.{' '}
+        </p>
         <h2 className="text-lg font-semibold mt-4">Weitere Onlineauftritte</h2>
         <h3 className="text-md font-semibold mt-2">
           Dieses Impressum gilt auch für:
         </h3>
         <p>https://www.instagram.com/simeonmalte</p>
-        <div className=" text-2xl">NEWSLETTER ABO</div>
+        <h2 className="text-lg font-semibold mt-4">Newsletter</h2>
+        <p>
+          Wir versenden Newsletter nur mit der Einwilligung der Empfänger*innen.
+          Um sich für den Newsletter anzumelden, reicht es aus, wenn Sie Ihre
+          E-Mail-Adresse angeben.
+        </p>
       </div>
     </div>
   );

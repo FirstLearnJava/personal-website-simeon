@@ -1,13 +1,14 @@
 {
-  "HomePage": {
-    "professionalSkills": "Tänzer | Musiker | Kunstvermittler"
-  },
   "Header": {
     "home": "Home",
     "about": "About",
     "contact": "Kontakt",
     "projects": "Projekte"
   },
+  "HomePage": {
+    "professionalSkills": "Tänzer | Musiker | Kunstvermittler"
+  },
+
   "AboutPage": {
     "p1": "Ich bin Simeon Ohlsen - Tänzer, Musiker und Kulturvermittler.",
     "p2": "Meine Leidenschaft ist die Verbindung von Bewegung und Klang, Improvisation und Struktur, persönlichem Ausdruck und gemeinschaftlichem Erleben.",
@@ -15,18 +16,15 @@
     "p4": "Heute arbeite ich als Tänzer, Choreograf und Kulturvermittler und begleite Menschen dabei, sich über Bewegung und Stimme neu zu entdecken.",
     "p5": "Mein Fokus liegt darauf, künstlerische Prozesse erfahrbar zu machen - für alle, die neugierig sind. Meine Arbeit ist geprägt von Offenheit, Neugier und der Überzeugung, dass Kunst eine Sprache ist, die jede*r verstehen kann."
   },
-  "Footer": {
-    "contact": "Kontakt",
-    "imprint": "Impressum"
-  },
+
   "Newsletter": {
     "welcomeToNewsletter": "Herzlich Willkommen zu meinem Newsletter!",
     "enterFirstName": "Wie lautet Ihr Vorname?",
     "enterLastName": "Wie lautet Ihr Nachname?",
     "enterEmail": "Ihre Email-Adresse:",
     "newsletterInfos": "Hinweise zum Newsletter:",
-    "doubleOptIn": "Double-Opt-In: Sie erhalten eine sogenannte Double-Opt-In-E-Mail, in der Sie um Bestätigung der Anmeldung gebeten werden.",
-    "optOut": "Abmelden (Opt-Out): Sie können dem Empfang der Newsletter jederzeit widersprechen. In jedem Newsletter finden Sie einen Abmeldelink über den Sie sich wieder austragen können.",
+    "doubleOptIn": "Anmeldung (Double-Opt-In): Nach der Anmeldung erhalten Sie eine E-Mail, in der Sie um die Bestätigung Ihrer Anmeldung gebeten werden.",
+    "optOut": "Abmeldung (Opt-Out): Sie können dem Empfang der Newsletter jederzeit widersprechen.  Klicken Sie direkt im Newsletter auf „abmelden/unsubscribe“.",
     "optionalNameDeclaration": "Die Angabe Ihres Vor- & Nachnamens ist optional.",
     "submit": "Anmelden",
     "submitting": "Anmelden...",
@@ -34,11 +32,19 @@
     "confirmationEmail": "Vielen Dank für Ihr Interesse! Sie erhalten umgehend ein Bestätigungsmail. Bitte klicken Sie auf den Link dieser Mail, um Ihre Anmeldung zu bestätigen.",
     "errorJoiningNewsletter": "Fehler bei der Newsletteranmeldung. Bitte versuchen Sie es erneut, oder kontaktieren Sie mich direkt unter simeon.ohlsen@test.at"
   },
+  "ContactPage": {
+    "contactPageTitle": "Kontakt",
+    "newsletterInfo": "Um über meine aktuellen Projekte und Termine informiert zu bleiben, melden Sie sich hier zu meinem Newsletter an."
+  },
   "DynamicProjects": {
     "categories": "Kategorien",
     "dance": "Tanz",
     "music": "Musik",
     "artMediation": "Kunstvermittlung",
     "allProjects": "Alle Projekte"
+  },
+  "Footer": {
+    "contact": "Kontakt",
+    "imprint": "Impressum"
   }
 }

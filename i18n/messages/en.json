@@ -1,13 +1,14 @@
 {
-  "HomePage": {
-    "professionalSkills": "Dancer | Musician | Art Mediator"
-  },
   "Header": {
     "home": "Home",
     "about": "About",
     "contact": "Contact",
     "projects": "Projects"
   },
+  "HomePage": {
+    "professionalSkills": "Dancer | Musician | Art Mediator"
+  },
+
   "AboutPage": {
     "p1": "I am Simeon Ohlsen - dancer, musician and art mediator.",
     "p2": "My passion is the combination of movement and sound, improvisation and structure, personal expression and communal experience.",
@@ -15,17 +16,14 @@
     "p4": "Today I work as a dancer, choreographer and art mediator, helping people to rediscover themselves through movement and voice.",
     "p5": "My focus is on making artistic processes accessible to anyone who is curious. My work is characterised by openness, curiosity and the conviction that art is a language that everyone can understand."
   },
-  "Footer": {
-    "contact": "Contact",
-    "imprint": "Imprint"
-  },
+
   "Newsletter": {
     "welcomeToNewsletter": "Welcome to my Newsletter!",
     "enterFirstName": "Your first name:",
     "enterLastName": "Your last name:",
     "enterEmail": "Your email:",
     "newsletterInfos": "Newsletter information:",
-    "doubleOptIn": "Double-Opt-In: You will receive an email in which you are asked to confirm your registration.",
+    "doubleOptIn": "Subscribe (Double-Opt-In): After registering, you will receive an e-mail asking you to confirm your registration.",
     "optOut": "Unsubscribe (Opt-Out): You can unsubscribe from this newsletter at any time. You will find an unsubscribe link in every newsletter.",
     "optionalNameDeclaration": "Entering your first name and surname is optional.",
     "submit": "Submit",
@@ -34,11 +32,19 @@
     "confirmationEmail": "Thank you for your interest! You will receive a confirmation e-mail immediately. Please click on the link in this e-mail to activate your registration.",
     "errorJoiningNewsletter": "Error joining the newsletter. Please try again, or contact me directly at simeon.ohlsen@test.at"
   },
+  "ContactPage": {
+    "contactPageTitle": "Contact",
+    "newsletterInfo": "To stay informed about my latest projects and upcoming events, subscribe to my newsletter here."
+  },
   "DynamicProjects": {
     "categories": "Categories",
     "dance": "Dance",
     "music": "Music",
     "artMediation": "Art Mediation",
     "allProjects": "All Projects"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "imprint": "Imprint"
   }
 }

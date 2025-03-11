@@ -7,11 +7,11 @@ export default function AboutPage() {
   const translation = useTranslations('AboutPage');
   return (
     <div className="mt-[61px] bg-[#FDFDFD] px-20 pt-8 pb-16">
-      <h2 className="pl-24 text-[44px] font-lora tracking-[0.01em]">
+      <h2 className="pl-24 text-[44px] font-lora tracking-[0.01em] fixed mt-1">
         Simeon Ohlsen
       </h2>
-      <div className="flex flex-col items-end mt-7 w-[calc((100vh-180px)/415*626)] ml-auto">
-        <div className=" h-[calc(100vh-180px)]">
+      <div className="flex flex-col items-end mt-[93px] w-[calc((100vh-186px)/990*1565)] mr-2 ml-auto">
+        <div className=" ">
           <Image
             alt="Simeon dancing"
             src={aboutImage}
