@@ -73,7 +73,7 @@ const ProjectsCardAsGrid = ({
             priority={true}
           />
           {checkCopyright() && (
-            <p className=" text-xs hover:cursor-default ml-[4px] ">
+            <p className=" text-xs hover:cursor-default ml-[4px] mt-[1px] ">
               &copy; {copyrightImage}
             </p>
           )}
@@ -81,7 +81,7 @@ const ProjectsCardAsGrid = ({
 
         <p
           ref={textRefLandscape}
-          className={`font-mont text-sm ${copyrightImage !== '' ? '-mt-[0px]' : 'mt-[16px]'}  line-clamp-5`}
+          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0px]' : 'mt-[17px]'}  line-clamp-5`}
         >
           {article}
         </p>
@@ -142,8 +142,9 @@ const ProjectsCardAsGrid = ({
               className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out hover:opacity-[0.90]"
               priority={true}
             />
-            {copyrightImage !== '' && (
-              <p className=" text-xs text-left hover:cursor-default ml-[2px]">
+
+            {checkCopyright() && (
+              <p className=" text-xs text-left hover:cursor-default ml-[2px] mt-[1px] ">
                 &copy; {copyrightImage}
               </p>
             )}

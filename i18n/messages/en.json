@@ -9,7 +9,11 @@
     "projects": "Projects"
   },
   "AboutPage": {
-    "aboutMe": "About Me"
+    "p1": "I am Simeon Ohlsen - dancer, musician and art mediator.",
+    "p2": "My passion is the combination of movement and sound, improvisation and structure, personal expression and communal experience.",
+    "p3": "My path has taken me from music to dance, from theory to practice and from the stage to educational workshops.",
+    "p4": "Today I work as a dancer, choreographer and art mediator, helping people to rediscover themselves through movement and voice.",
+    "p5": "My focus is on making artistic processes accessible to anyone who is curious. My work is characterised by openness, curiosity and the conviction that art is a language that everyone can understand."
   },
   "Footer": {
     "contact": "Contact",

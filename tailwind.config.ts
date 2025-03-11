@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         lora: 'var(--font-lora)',
         mont: 'var(--font-mont)',
+        dmSans: 'var(--font-dmSans)',
+        inter: 'var(--font-inter)',
       },
     },
   },

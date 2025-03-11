@@ -9,7 +9,11 @@
     "projects": "Projekte"
   },
   "AboutPage": {
-    "aboutMe": "Über mich"
+    "p1": "Ich bin Simeon Ohlsen - Tänzer, Musiker und Kulturvermittler.",
+    "p2": "Meine Leidenschaft ist die Verbindung von Bewegung und Klang, Improvisation und Struktur, persönlichem Ausdruck und gemeinschaftlichem Erleben.",
+    "p3": "Mein Weg führte mich von der Musik zum Tanz, von der Theorie zur Praxis und von der Bühne zu Vermittlungsworkshops.",
+    "p4": "Heute arbeite ich als Tänzer, Choreograf und Kulturvermittler und begleite Menschen dabei, sich über Bewegung und Stimme neu zu entdecken.",
+    "p5": "Mein Fokus liegt darauf, künstlerische Prozesse erfahrbar zu machen - für alle, die neugierig sind. Meine Arbeit ist geprägt von Offenheit, Neugier und der Überzeugung, dass Kunst eine Sprache ist, die jede*r verstehen kann."
   },
   "Footer": {
     "contact": "Kontakt",
