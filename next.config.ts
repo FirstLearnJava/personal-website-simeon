@@ -5,10 +5,16 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
+    /* remotePatterns: [
       {
         protocol: 'https',
         hostname: 'i.postimg.cc',
+      },
+    ], */
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },

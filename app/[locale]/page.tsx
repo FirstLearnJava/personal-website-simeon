@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import homepageCover from '../../public/homepage/coverImage1.jpg';
+import homepageCover from '../../public/homepage/coverImage.webp';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 
