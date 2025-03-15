@@ -1,15 +1,16 @@
-import type { NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request) {
   try {
     const userData = await req.json();
 
-    if (!userData) {
-      return res.status(400).json({
-        error:
-          'Please check, if you provided your email, your first name and your last name.',
-      });
+    if (!userData.email) {
+      return NextResponse.json(
+        {
+          error: 'Please check, if you provided your email.',
+        },
+        { status: 400 },
+      );
     }
 
     const MailchimpKey = process.env.MAILCHIMP_API_KEY;
@@ -30,8 +31,7 @@ export async function POST(req: Request, res: NextApiResponse) {
       },
       body: JSON.stringify({
         email_address: userData.email,
-        //status has to be changed to "pending" for double-opt-in
-        status: 'pending',
+        status: 'pending', // for double opt-in
         merge_fields: {
           FNAME: userData.firstName,
           LNAME: userData.lastName,
@@ -40,13 +40,19 @@ export async function POST(req: Request, res: NextApiResponse) {
     });
     if (!response.ok) {
       const errorData = await response.json();
-      return res.status(response.status).json({ error: errorData.detail });
+      return NextResponse.json(
+        { error: errorData.detail || 'Failed to subscribe user' },
+        { status: response.status },
+      );
     }
 
     const received = await response.json();
     return NextResponse.json(received);
   } catch (error) {
     console.error('Error:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 },
+    );
   }
 }
