@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-//import homepageCover from '../../public/homepage/DancePerformanceMuk.jpg';
 import homepageCover from '../../public/homepage/coverImage1.jpg';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
@@ -26,7 +25,6 @@ export default function HomePage() {
           height={394} */
             /* ADAPT BEFORE Finalising project for best performance
           sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw" */
-            loading="eager"
             fill
             sizes="100vw"
             quality={100}

@@ -35,7 +35,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href={'mailto:simeonohlsen@test.com'}>
+            <Link href={'mailto:contact@simeonohlsen.com'}>
               <MailIcon
                 fill="#303030"
                 className="hover:scale-105 hover:fill-black"

@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import aboutImage from '../../../public/about/aboutImage.jpg';
 import { useTranslations } from 'next-intl';
 
 export default function AboutPage() {
   const translation = useTranslations('AboutPage');
   return (
-    <div className="mt-[61px] bg-[#FDFDFD] px-20 pt-8 pb-16">
+    <div className="mt-[61px] bg-[#FDFDFD] px-20 pt-8 pb-8">
       <h2 className="pl-24 text-[44px] font-lora tracking-[0.01em] fixed mt-1">
         Simeon Ohlsen
       </h2>
@@ -14,10 +13,11 @@ export default function AboutPage() {
         <div className=" ">
           <Image
             alt="Simeon dancing"
-            src={aboutImage}
+            src="/about/aboutImage.jpg"
             className="rounded-sm"
-
-            // placeholder="blur"
+            width={1500}
+            height={1200}
+            priority
             //sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
           />
         </div>

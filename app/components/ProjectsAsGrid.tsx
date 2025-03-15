@@ -17,11 +17,7 @@ const ProjectsAsGrid = ({
   const pathname = usePathname();
   const isOnProjectsPath = pathname.includes('projects');
   const [locale, setLocale] = useState<string>('en');
-  console.log(category);
-  /*  const revisedCategory = ()=>{if(category === 'art-mediation'){
-     'art_mediation'};
-    else return category;
-  }} */
+
   const revisedCategory = () => {
     if (category === 'art-mediation') {
       return 'art_mediation';

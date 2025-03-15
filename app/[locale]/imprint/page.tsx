@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ImprintPage() {
   return (
-    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[61px] pb-12">
+    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[61px] pb-8">
       <div className="flex flex-col gap-4">
         <h1 className="flex justify-center mb-8 text-[42px] font-mont font-semibold mt-16">
           Impressum
@@ -11,7 +11,8 @@ export default function ImprintPage() {
           <p>Informationen über den Diensteanbieter</p>
           <p>Simeon Ohlsen</p>
           <p>
-            <span className="font-semibold">E-Mail:</span> simeon.ohlsen@test.at
+            <span className="font-semibold">E-Mail:</span>{' '}
+            contact@simeonohlsen.com
           </p>
         </div>
         <h2 className="text-lg font-semibold mt-4">

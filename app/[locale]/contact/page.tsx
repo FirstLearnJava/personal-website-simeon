@@ -1,14 +1,6 @@
-/* import React from 'react';
-
-export default function ContactPage() {
-  return <div className="flex justify-center">Contactpage in progress...</div>;
-} */
-
 import React from 'react';
-import aboutImage from '../../../public/about/aboutImage.jpg';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { InstagramIcon } from '@/public/icons/InstagramIcon';
 
 export default function ContactPage() {
   const t = useTranslations('ContactPage');
@@ -18,17 +10,17 @@ export default function ContactPage() {
         {t('contactPageTitle')}
       </h2>
       <div className=" mt-11 text-[20px] font-mont flex-col ml-52 gap-32 leading-7 mr-[140px] font-medium ">
-        <div className=" leading-8 w-fit">
+        <div className="leading-8 w-fit">
           <p className="hover:underline">
-            <Link href={'mailto:simeonohlsen@test.com'}>
-              simeonohlsen@test.com
+            <Link href={'mailto:contact@simeonohlsen.com'}>
+              contact@simeonohlsen.com
             </Link>
           </p>
-          <p className="hover:underline">
+          {/*  <p className="hover:underline">
             <Link href={'https://www.instagram.com/simeonmalte'}>
               instagram.com/simeonmalte
             </Link>
-          </p>
+          </p> */}
           <p className="hover:underline">
             <Link href={'tel:+436702013512'}>+436702013512</Link>
           </p>

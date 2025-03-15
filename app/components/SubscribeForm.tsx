@@ -102,7 +102,7 @@ function SubscribeForm() {
           }
         }}
       >
-        <Form className="w-full flex flex-col items-center gap-4 mt-11">
+        <Form className="w-full flex flex-col items-center gap-4 mt-7">
           <label className="w-full">
             <span className="ml-2">{translation('enterEmail')}</span>
             <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
