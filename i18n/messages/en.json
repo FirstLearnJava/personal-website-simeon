@@ -5,6 +5,10 @@
     "contact": "Contact",
     "projects": "Projects"
   },
+  "LanguageSelector": {
+    "english": "English",
+    "german": "German"
+  },
   "HomePage": {
     "professionalSkills": "Dancer | Musician | Art Mediator"
   },

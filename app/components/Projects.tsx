@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import ProjectsCard from './ProjectsCard';
 import { Project } from '../actions/fetchWordpressData';
+import { redirect } from '@/i18n/routing';
 
 const Projects = ({
   data,
@@ -14,9 +17,37 @@ const Projects = ({
   const projectById: Project | undefined = data.find(
     (project) => project.id == paramsId,
   );
+  const actualLocaleProjectImageUrl = projectById?.acf.image;
+
+  const projectsFilteredByImage = data.filter(
+    (project) => project.acf.image === actualLocaleProjectImageUrl,
+  );
+  const projectInOtherLanguage: Project | undefined =
+    projectsFilteredByImage.find(
+      (project) => project.acf.language.slug === paramsLocale,
+    );
+
+  useEffect(() => {
+    if (!projectInOtherLanguage) return;
+    {
+    }
+    const currentLocale = sessionStorage.getItem('singleProjectLocale');
+    if (currentLocale !== paramsLocale && currentLocale !== undefined) {
+      console.log(`${paramsLocale}/projects/${projectInOtherLanguage.id}`);
+      sessionStorage.setItem('singleProjectLocale', paramsLocale);
+      redirect({
+        href: `/project/${projectInOtherLanguage.id}`,
+        locale: paramsLocale,
+      });
+    }
+  }, [projectInOtherLanguage, paramsLocale]);
 
   if (!projectById) {
-    return <div>The project you are trying to access was not found.</div>;
+    return (
+      <div className="mt-20 text-xl">
+        The project you are trying to access was not found.
+      </div>
+    );
   }
 
   const checkProfessionTypeForTranslate = () => {

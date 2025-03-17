@@ -9,14 +9,16 @@ import { usePathname } from '@/i18n/routing';
 const ProjectsAsGrid = ({
   category,
   data,
+  locale,
 }: {
   category?: string;
   data: Project[];
+  locale: string;
 }) => {
   const projects = data;
   const pathname = usePathname();
   const isOnProjectsPath = pathname.includes('projects');
-  const [locale, setLocale] = useState<string>('en');
+  //const [locale, setLocale] = useState<string>('en');
 
   const revisedCategory = () => {
     if (category === 'art-mediation') {
@@ -24,7 +26,7 @@ const ProjectsAsGrid = ({
     }
     return category;
   };
-  useEffect(() => {
+  /*   useEffect(() => {
     const cookies = new Cookies();
     const localeFromCookie = cookies.get('NEXT_LOCALE');
 
@@ -34,7 +36,7 @@ const ProjectsAsGrid = ({
     ) {
       setLocale(localeFromCookie);
     }
-  }, []);
+  }, []); */
   return (
     <div className="h-full ">
       <div className="grid grid-cols-2 gap-24">

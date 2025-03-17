@@ -30,7 +30,7 @@ const ProjectsCard = ({
       </p>
       <div className="flex justify-center">
         <Image
-          alt={title}
+          alt={`project image about ${title}`}
           src={imageUrl}
           width={600}
           height={600}

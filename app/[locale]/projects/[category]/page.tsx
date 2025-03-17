@@ -1,20 +1,22 @@
 import React from 'react';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import ProjectsWrapper from '@/app/components/ProjectsWrapper';
+import { getTranslations } from 'next-intl/server';
 
-export default function ProjectPage(params: {
+export default async function ProjectPage(params: {
   params: { category?: string; locale: string };
   searchParams: {};
+  locale: string;
 }) {
-  const resolvedParams = params.params;
+  const resolvedParams = await params.params;
   const category = resolvedParams.category ?? '';
+  const locale = resolvedParams.locale;
   const styleWhenCategorySelected = 'font-semibold !border-black !italic ';
   const styleOnCategoryHover = 'hover:font-medium hover:border-gray-700';
-  const t = useTranslations('DynamicProjects');
+  const t = await getTranslations('DynamicProjects');
 
   return (
-    <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] min-h-[calc(100vh-61px-53px)]">
+    <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] min-h-[calc(100vh-61px-49px)]">
       <div className="w-[180px] ">
         <div className="fixed w-[180px] bg-[#b9cbd8] h-full left-0">
           <div className="h-full flex flex-col mt-14 items-center">
@@ -54,7 +56,7 @@ export default function ProjectPage(params: {
       </div>
 
       <div className="my-14">
-        <ProjectsWrapper category={category} />
+        <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>
   );

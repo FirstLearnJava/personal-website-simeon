@@ -5,6 +5,10 @@
     "contact": "Kontakt",
     "projects": "Projekte"
   },
+  "LanguageSelector": {
+    "english": "Englisch",
+    "german": "Deutsch"
+  },
   "HomePage": {
     "professionalSkills": "Tänzer | Musiker | Kunstvermittler"
   },

@@ -10,7 +10,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const paramsLocale = awaitedParams.locale;
   const data = await fetchWordpressData();
   return (
-    <div className="flex justify-center mt-[61px] min-h-[calc(100vh-61px-53px)] bg-projectBackground">
+    <div className="flex justify-center mt-[61px] min-h-[calc(100vh-61px-49px)] bg-projectBackground">
       <Projects data={data} paramsId={paramsId} paramsLocale={paramsLocale} />
     </div>
   );

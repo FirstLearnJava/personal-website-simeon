@@ -1,3 +1,4 @@
+'use client';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
@@ -65,7 +66,7 @@ const ProjectsCardAsGrid = ({
 
         <Link href={`/project/${id}`} className="max-h-[600px] max-w-[600px]">
           <Image
-            alt={title}
+            alt={`project image about ${title}`}
             src={imageUrl}
             width={600}
             height={600}
@@ -135,7 +136,7 @@ const ProjectsCardAsGrid = ({
             className="max-h-[600px] flex-shrink-0 w-[56%]"
           >
             <Image
-              alt={title}
+              alt={`project image about ${title}`}
               src={imageUrl}
               width={600}
               height={600}

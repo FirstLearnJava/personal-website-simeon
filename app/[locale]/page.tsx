@@ -1,24 +1,29 @@
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import homepageCover from '../../public/homepage/coverImage.webp';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Simeon Ohlsen | Personal Page',
   description: `Simeon Ohlsen's Homepage `,
 };
 
-export default function HomePage() {
+type Params = Promise<{ id: string; locale: string }>;
+
+export default async function HomePage({ params }: { params: Params }) {
   // Determine translation based on locale, fallback to "en" if invalid
-  const translation = useTranslations('HomePage');
+  //const translation = useTranslations('HomePage');
+  const translation = await getTranslations('HomePage');
+  const awaitedParams = await params;
+  const paramsLocale = awaitedParams.locale;
 
   return (
     <div className="flex flex-col">
       <div className="w-full h-[100vh] ">
         <div className="absolute top-[61px] left-0 w-full h-[calc(100vh-61px)] -z-10">
           <Image
-            alt="playing piano in rainbow-colored smoke"
+            alt="Simeon dancing in the nature"
             src={homepageCover}
             className="object-cover contrast-[1.05]" // cover contain
             /* width={1920}
@@ -52,7 +57,7 @@ export default function HomePage() {
         >
           {/* <h2 className="font-lora text-4xl mb-12 text-white">Projects</h2> */}
           {/* original brighter bg-color: /* F9FAFF & #f7fdf5 */}
-          <ProjectsWrapper />
+          <ProjectsWrapper locale={paramsLocale} />
         </div>
       </div>
     </div>

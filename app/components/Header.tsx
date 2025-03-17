@@ -3,8 +3,8 @@ import MailIcon from '../../public/icons/MailIcon';
 //import Link from 'next/link';
 import { Link } from '@/i18n/routing';
 import { InstagramIcon } from '@/public/icons/InstagramIcon';
-import LanguageSelector from './LanguageSelector';
 import { useTranslations } from 'next-intl';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const t = useTranslations('Header');

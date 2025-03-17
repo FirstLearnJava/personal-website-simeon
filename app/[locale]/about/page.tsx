@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="flex flex-col items-end mt-[93px] w-[calc((100vh-186px)/990*1565)] mr-2 ml-auto">
         <div className=" ">
           <Image
-            alt="Simeon dancing"
+            alt="Simeon sitting in focused posture"
             src="/about/aboutImage.jpg"
             className="rounded-sm"
             width={1500}
@@ -21,7 +21,7 @@ export default function AboutPage() {
             //sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
           />
         </div>
-        <p className="text-lg leading-8 font-dmSans mt-8 w-full">
+        <p className="text-lg leading-8 font-dmSans mt-6 w-full">
           {translation('p1')}
           <br />
           {translation('p2')}
