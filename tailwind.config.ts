@@ -11,7 +11,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        projectBackground: '#f1f5f8',
+        projectBackground: '#edf4f8',
       },
       fontFamily: {
         lora: 'var(--font-lora)',
@@ -19,6 +19,20 @@ export default {
         dmSans: 'var(--font-dmSans)',
         inter: 'var(--font-inter)',
       },
+    },
+    screens: {
+      xxl: { max: '1460px' },
+      xl: { max: '1279px' },
+      // => @media (max-width: 1279px) { ... }
+
+      lg: { max: '1023px' },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: '767px' },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: '639px' },
+      // => @media (max-width: 639px) { ... }
     },
   },
   plugins: [],

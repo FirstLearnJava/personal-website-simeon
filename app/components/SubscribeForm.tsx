@@ -33,7 +33,7 @@ function SubscribeForm() {
     });
   }, []); */
   return (
-    <div className="flex flex-col space-y-8 md:w-[500px]">
+    <div className="flex flex-col space-y-8 w-[500px]">
       <Formik
         initialValues={{
           email: '',

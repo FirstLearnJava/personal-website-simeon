@@ -37,14 +37,15 @@ export default async function HomePage({ params }: { params: Params }) {
             priority
           />
         </div>
+        <div className="absolute top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[30%] left-[64%] xl:left-[61%] lg:left-[56%] text-white md:w-[220px]">
+          <h1 className=" text-[50px] xxl:text-[44px] xl:text-[40px] lg:text-[36px] md:text-[30px] leading-9">
+            Simeon Ohlsen
+          </h1>
 
-        <h1 className=" absolute text-[46px] top-[12.5%] left-[67%] text-white">
-          Simeon Ohlsen
-        </h1>
-
-        <p className=" absolute font-mont text-[20px]  mt-1 top-[20%] left-[69%] text-white font-medium">
-          {translation('professionalSkills')}
-        </p>
+          <p className=" font-mont ml-10 md:ml-0 md:text-center text-[22px] xxl:text-[20px] xl:text-[18px] lg:text-[16px] text-white font-medium">
+            {translation('professionalSkills')}
+          </p>
+        </div>
       </div>
 
       <div className="z-20 w-full flex items-center flex-col">
@@ -53,7 +54,7 @@ export default async function HomePage({ params }: { params: Params }) {
         How to make a linear gradient with tailwind --> Use https://cssgradient.io/
         */}
         <div
-          className={`flex-col flex items-center w-full bg-projectBackground pt-32 pb-16`}
+          className={`flex-col flex items-center w-full bg-projectBackground pt-32 xxl:pt-24 xl:pt-16 pb-16`}
         >
           {/* <h2 className="font-lora text-4xl mb-12 text-white">Projects</h2> */}
           {/* original brighter bg-color: /* F9FAFF & #f7fdf5 */}

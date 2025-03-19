@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Cookies } from 'react-cookie';
 import ProjectsCardAsGrid from './ProjectsCardAsGrid';
 import { Project } from '../actions/fetchWordpressData';
 import { usePathname } from '@/i18n/routing';
@@ -38,8 +37,8 @@ const ProjectsAsGrid = ({
     }
   }, []); */
   return (
-    <div className="h-full ">
-      <div className="grid grid-cols-2 gap-24">
+    <div className="h-full">
+      <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-[18%] xxl:gap-x-[16%] gap-y-28 xl:gap-y-20 justify-items-center">
         {!Array.isArray(projects) || projects.length === 0 ? (
           <div
             className={`h-full text-2xl font-mont col-span-2 text-center italic pb-[7vh]  ${isOnProjectsPath ? 'pt-[10vh]' : ''}`}
@@ -58,6 +57,7 @@ const ProjectsAsGrid = ({
             .map((project, index, arr) => {
               const isLastOdd =
                 arr.length % 2 !== 0 && index === arr.length - 1;
+              const isJustOneProject = arr.length === 1;
 
               const checkProfessionTypeForTranslate = () => {
                 if (locale === 'en') {
@@ -82,7 +82,7 @@ const ProjectsAsGrid = ({
               return (
                 <div
                   key={project.slug}
-                  className={`${isLastOdd ? 'col-span-2 flex justify-center' : ''}`}
+                  className={`${isLastOdd ? 'col-span-2 lg:col-span-1 lg:block lg:justify-normal flex justify-center' : ''}`}
                 >
                   <ProjectsCardAsGrid
                     id={project.id}
@@ -94,6 +94,7 @@ const ProjectsAsGrid = ({
                     aspectRatio={project.acf.aspect_ratio.slug}
                     copyrightImage={project.acf.copyright_image}
                     locale={locale}
+                    isJustOneProject={isJustOneProject}
                   />
                 </div>
               );

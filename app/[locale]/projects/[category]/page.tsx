@@ -17,15 +17,15 @@ export default async function ProjectPage(params: {
 
   return (
     <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] min-h-[calc(100vh-61px-49px)]">
-      <div className="w-[180px] ">
-        <div className="fixed w-[180px] bg-[#b9cbd8] h-full left-0">
+      <div className="w-[180px] md:w-[150px]">
+        <div className="fixed  md:w-[150px] w-[180px] bg-[#b9cbd8] h-full left-0">
           <div className="h-full flex flex-col mt-14 items-center">
-            <div className="">
-              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 text-[17px]">
+            <div>
+              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base">
                 {t('categories')}
               </h2>
               <ul
-                className={`*:border-b *:border-gray-800 *:mb-3 *:pb-[1px] *:w-[134px] mt-[2px]`}
+                className={` *:border-b *:border-gray-800 *:mb-3 *:pb-[1px] *:w-[134px] md:*:w-[7rem] mt-[2px]`}
               >
                 <li
                   className={`${category === 'dance' ? styleWhenCategorySelected : styleOnCategoryHover}`}

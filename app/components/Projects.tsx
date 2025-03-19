@@ -29,8 +29,6 @@ const Projects = ({
 
   useEffect(() => {
     if (!projectInOtherLanguage) return;
-    {
-    }
     const currentLocale = sessionStorage.getItem('singleProjectLocale');
     if (currentLocale !== paramsLocale && currentLocale !== undefined) {
       console.log(`${paramsLocale}/projects/${projectInOtherLanguage.id}`);

@@ -10,9 +10,9 @@ const Header = () => {
   const t = useTranslations('Header');
 
   return (
-    <nav className="flex w-full justify-between sm:px-20 py-4 border-b-[1px] fixed z-50 bg-[--background] border-black text-lg font-medium">
+    <nav className="flex w-full justify-between px-16 xl:px-12 md:px-8 py-4 border-b-[1px] fixed z-50 bg-[--background] border-black text-lg font-medium">
       <div className=" text-[#333]">
-        <ul className="flex gap-8">
+        <ul className="flex gap-8 md:gap-6">
           <li className="hover:text-black hover:scale-[1.03] ">
             <Link href="/">{t('home')}</Link>
           </li>
