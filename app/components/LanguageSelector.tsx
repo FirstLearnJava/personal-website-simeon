@@ -37,7 +37,7 @@ const LanguageSelector = () => {
     setIsDropDownOpen(false);
   }, [pathname]);
   return (
-    <Fragment>
+    <div className="relative">
       <div
         className="flex items-center group"
         onClick={() => {
@@ -80,7 +80,7 @@ const LanguageSelector = () => {
           </li>
         </ul>
       )}
-    </Fragment>
+    </div>
   );
 };
 

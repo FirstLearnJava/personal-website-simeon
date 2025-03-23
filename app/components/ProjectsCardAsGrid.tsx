@@ -56,15 +56,15 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'landscape-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[58vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[72vw]'} h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[58vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[72vw] sm:!w-[84vw]'} h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full mt-1">
           {professionsType}
         </h2>
-        <h2 className="text-center text-xl xl:tracking-tight lg:tracking-normal xl:text-lg xl:leading-5 lg:text-xl mt-1">
+        <h2 className="text-center text-xl xl:tracking-tight lg:tracking-normal xl:text-lg xl:leading-5 lg:text-xl mt-1 xs:mb-2">
           {title}
         </h2>
-        <p className="text-center font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 ">
+        <p className="xs:hidden text-center font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 ">
           {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
           {publishedOnAndBy}
         </p>
@@ -87,7 +87,7 @@ const ProjectsCardAsGrid = ({
 
         <p
           ref={textRefLandscape}
-          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'}  line-clamp-5 xl:line-clamp-4 xl:text-[0.8125rem] lg:text-sm md:text-[0.8125rem]`}
+          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'}  line-clamp-5 xl:line-clamp-4  xl:text-sm md:text-[0.8125rem]`}
         >
           {article}
         </p>
@@ -95,7 +95,7 @@ const ProjectsCardAsGrid = ({
           {isLandscapeOverflowed && (
             <Link
               href={`/project/${id}`}
-              className="bg-white font-medium inline absolute left-0 hover:font-semibold xl:text-sm lg:text-base md:text-sm -mt-[0.125rem]"
+              className="bg-white font-medium inline absolute left-0 hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem]"
             >
               weiterlesen...
             </Link>
@@ -107,24 +107,24 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'portrait-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[58vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[72vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[58vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[72vw] sm:!w-[84vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
       >
-        <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider mt-1">
+        <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider mt-1   ">
           {professionsType}
         </h2>
 
-        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1">
+        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1 xs:mb-3">
           {title}
         </h2>
-        <p className=" font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 text-center">
+        <p className="xs:hidden font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 sm:mb-5 text-center">
           {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
           {publishedOnAndBy}
         </p>
         <div className="flex justify-center gap-[22px] mb-8 h-full">
-          <div className="mt-1 flex-grow">
+          <div className="mt-1 sm:mt-0 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
-                className="font-mont mt-[0.125rem] xxl:mt-0 text-sm xl:text-[0.8125rem] lg:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[17]"
+                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[17]"
                 ref={textRefLandscape}
               >
                 {article}
@@ -134,7 +134,7 @@ const ProjectsCardAsGrid = ({
             {isLandscapeOverflowed && (
               <Link
                 href={`/project/${id}`}
-                className="bg-white inline font-medium absolute hover:font-semibold xl:text-sm lg:text-base md:text-sm -mt-[0.125rem]"
+                className="bg-white inline font-medium absolute hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem]"
               >
                 weiterlesen...
               </Link>
