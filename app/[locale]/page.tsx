@@ -22,7 +22,7 @@ export default async function HomePage({ params }: { params: Params }) {
   return (
     <div className="flex flex-col minxs:bg-projectBackground bg-[#f9f8f8]">
       <div className="w-full h-[100vh] xs:hidden ">
-        <div className="absolute top-[61px] left-0 w-full h-[calc(100vh-61px)] z-10">
+        <div className="absolute top-[61px] left-0 w-full h-[calc(100vh-62px)] z-10">
           <Image
             alt="Simeon dancing in the nature"
             src={homepageCover}
@@ -44,8 +44,8 @@ export default async function HomePage({ params }: { params: Params }) {
           </p>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full minxs:hidden mt-[130px] mb-[30px]">
-        <div className=" absolute top-[310px] z-10 text-white">
+      <div className="flex flex-col items-center w-full minxs:hidden mt-[120px] mb-[30px]">
+        <div className=" absolute top-[300px] z-10 text-white">
           <h1 className="text-[40px] leading-9 text-center">Simeon Ohlsen</h1>
         </div>
         <Image
@@ -70,7 +70,7 @@ export default async function HomePage({ params }: { params: Params }) {
         How to make a linear gradient with tailwind --> Use https://cssgradient.io/
         */}
         <div
-          className={`flex-col flex items-center w-full  pt-32 xxl:pt-24 xl:pt-16 pb-16`}
+          className={`flex-col flex items-center w-full  pt-32 xxl:pt-24 xl:pt-16 xs:pt-8 pb-16`}
         >
           {/* <h2 className="font-lora text-4xl mb-12 text-white">Projects</h2> */}
           {/* original brighter bg-color: /* F9FAFF & #f7fdf5 */}

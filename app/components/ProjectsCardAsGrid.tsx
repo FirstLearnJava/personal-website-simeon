@@ -61,7 +61,7 @@ const ProjectsCardAsGrid = ({
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full mt-1">
           {professionsType}
         </h2>
-        <h2 className="text-center text-xl xl:tracking-tight lg:tracking-normal xl:text-lg xl:leading-5 lg:text-xl mt-1 xs:mb-2">
+        <h2 className="text-center text-xl xl:tracking-tight lg:tracking-normal xl:text-lg xl:leading-5 lg:text-xl mt-1 xs:mb-2 xs:mt-0">
           {title}
         </h2>
         <p className="xs:hidden text-center font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 ">
@@ -113,7 +113,7 @@ const ProjectsCardAsGrid = ({
           {professionsType}
         </h2>
 
-        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1 xs:mb-3">
+        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1 xs:mt-0 xs:mb-3">
           {title}
         </h2>
         <p className="xs:hidden font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 sm:mb-5 text-center">

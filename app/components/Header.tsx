@@ -146,7 +146,7 @@ const Header = () => {
     <>
       {/* Navbar */}
       <nav
-        className={` fixed w-full flex justify-between px-16 xl:px-12 md:px-8 py-4 border-b-[1px] z-50 bg-[--background] border-black text-lg font-medium`}
+        className={` fixed w-full flex justify-between px-16 xl:px-12 md:px-8 py-4 border-b-[1px] z-50 bg-[--background] border-black text-lg font-medium h-[62px] sm:[h-64px]`}
       >
         {/* Desktop Navigation (Hidden on `sm`) */}
         <div className="text-[#333] sm:hidden">

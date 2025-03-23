@@ -55,7 +55,7 @@ const LanguageSelector = () => {
         <ArrowIcon className="group-hover:scale-125" />
       </div>
       {isDropDownOpen && (
-        <ul className="absolute z-10 font-sans font-medium bg-white border border-black rounded-[4px] mt-[11px] px-1 pt-1 pb-[3px] text-base -right-[3px] w-[70px] ">
+        <ul className="absolute z-10 font-sans font-medium bg-white border border-black rounded-[4px] mt-[11px] sm:mt-[12px] px-1 pt-1 sm:pt-2 sm:pb-[6px] pb-[3px] text-base sm:text-lg minsm:-right-[4px] sm:-right-[10px] w-[70px] sm:w-[5rem] sm:space-y-1 ">
           <li>
             <button
               value={'en'}
