@@ -11,22 +11,28 @@ export default async function ProjectPage(params: {
   const resolvedParams = await params.params;
   const category = resolvedParams.category ?? '';
   const locale = resolvedParams.locale;
-  const styleWhenCategorySelected = 'font-semibold !border-black !italic ';
+  const styleWhenCategorySelected =
+    'font-semibold !border-black !italic sm:*:!border-b sm:*:border-black';
   const styleOnCategoryHover = 'hover:font-medium hover:border-gray-700';
   const t = await getTranslations('DynamicProjects');
 
   return (
-    <div className="flex justify-center text-base relative bg-projectBackground mt-[61px] min-h-[calc(100vh-61px-49px)]">
-      <div className="w-[180px] md:w-[150px]">
-        <div className="fixed  md:w-[150px] w-[180px] bg-[#b9cbd8] h-full left-0">
-          <div className="h-full flex flex-col mt-14 items-center">
-            <div>
-              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base">
+    <div className="flex sm:flex-col justify-center text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-61px-49px)]">
+      <div className="w-[180px] md:w-[150px] sm:w-full z-40">
+        <div className="fixed sm:static md:w-[150px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
+          <div className="h-full flex flex-col mt-14 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
+            <div className="">
+              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base sm:hidden">
                 {t('categories')}
               </h2>
               <ul
-                className={` *:border-b *:border-gray-800 *:mb-3 *:pb-[1px] *:w-[134px] md:*:w-[7rem] mt-[2px]`}
+                className={` *:border-b sm:*:border-0 *:border-gray-800 *:mb-3 sm:*:mb-0 *:pb-[1px] sm:*:pb-0 minmd:*:w-[134px] minsm:*:w-[7rem] mt-[2px] sm:mt-0 sm:flex sm:justify-around sm:w-[100vw] sm:text-[1.0625rem] xs:text-base`}
               >
+                <li
+                  className={`${category === 'all' ? styleWhenCategorySelected : styleOnCategoryHover} sm:*:pb-[1px] minsm:hidden`}
+                >
+                  <Link href="/projects/all">{t('allProjects')}</Link>
+                </li>
                 <li
                   className={`${category === 'dance' ? styleWhenCategorySelected : styleOnCategoryHover}`}
                 >
@@ -45,7 +51,7 @@ export default async function ProjectPage(params: {
                   </Link>
                 </li>
                 <li
-                  className={`${category === 'all' ? styleWhenCategorySelected : styleOnCategoryHover}`}
+                  className={`${category === 'all' ? styleWhenCategorySelected : styleOnCategoryHover} sm:hidden`}
                 >
                   <Link href="/projects/all">{t('allProjects')}</Link>
                 </li>
@@ -55,7 +61,7 @@ export default async function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="my-14">
+      <div className="my-14 sm:mt-16 xs:mt-14">
         <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>

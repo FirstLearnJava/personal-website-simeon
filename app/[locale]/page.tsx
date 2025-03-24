@@ -20,7 +20,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const paramsLocale = awaitedParams.locale;
 
   return (
-    <div className="flex flex-col minxs:bg-projectBackground bg-[#f9f8f8]">
+    <div className="flex flex-col bg-projectBackground">
       <div className="w-full h-[100vh] xs:hidden ">
         <div className="absolute top-[61px] left-0 w-full h-[calc(100vh-62px)] z-10">
           <Image

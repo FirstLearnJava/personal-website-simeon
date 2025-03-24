@@ -166,7 +166,10 @@ const Header = () => {
         {/* Right Side Icons */}
         <ul className="flex gap-6 items-center">
           <li>
-            <Link href={'https://www.instagram.com/simeonmalte'}>
+            <Link
+              href={'https://www.instagram.com/simeonmalte'}
+              target="_blank"
+            >
               <InstagramIcon className="hover:scale-105" fill="#303030" />
             </Link>
           </li>
