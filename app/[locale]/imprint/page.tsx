@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ImprintPage() {
   return (
-    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[61px] pb-8">
+    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[62px] pb-8">
       <div className="flex flex-col gap-4">
         <h1 className="flex justify-center mb-8 text-[42px] font-mont font-semibold mt-16">
           Impressum

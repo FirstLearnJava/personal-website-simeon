@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import homepageCover from '../../public/homepage/coverImage.webp';
-import homepageCoverMobile from '../../public/homepage/homepageCoverMobile.webp';
+import homepageCoverMobileSm from '../../public/homepage/homepageCoverMobileSm.webp';
+import homepageCoverMobileXs from '../../public/homepage/homepageCoverMobileXs.webp';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 import { getTranslations } from 'next-intl/server';
@@ -21,8 +22,8 @@ export default async function HomePage({ params }: { params: Params }) {
 
   return (
     <div className="flex flex-col bg-projectBackground">
-      <div className="w-full h-[100vh] xs:hidden ">
-        <div className="absolute top-[61px] left-0 w-full h-[calc(100vh-62px)] z-10">
+      <div className="w-full h-[100vh] sm:hidden ">
+        <div className="absolute top-[] left-0 w-full h-[calc(100vh-62px)] z-10">
           <Image
             alt="Simeon dancing in the nature"
             src={homepageCover}
@@ -44,16 +45,32 @@ export default async function HomePage({ params }: { params: Params }) {
           </p>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full minxs:hidden mt-[120px] mb-[30px]">
-        <div className=" absolute top-[300px] z-10 text-white">
-          <h1 className="text-[40px] leading-9 text-center">Simeon Ohlsen</h1>
+      <div className="flex flex-col items-center w-full minsm:hidden mt-[62px] mb-[30px]">
+        <div className=" absolute top-[374px] xs:top-[296px] z-10 text-white">
+          <h1 className="text-[50px] xs:text-[42px] leading-9 text-center">
+            Simeon Ohlsen
+          </h1>
         </div>
         <Image
           alt="Simeon dancing in the nature"
-          src={homepageCoverMobile}
-          className="object-cover contrast-[1.05] rounded-sm" // cover contain
-          width={330}
-          height={440}
+          src={homepageCoverMobileSm}
+          className="object-cover contrast-[1.05] rounded-sm xs:hidden" // cover contain
+          width={640}
+          height={853}
+          /* ADAPT BEFORE Finalising project for best performance
+          sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw" */
+          //fill
+          //sizes="100vw"
+          quality={100}
+          placeholder="blur"
+          priority
+        />
+        <Image
+          alt="Simeon dancing in the nature"
+          src={homepageCoverMobileXs}
+          className="object-cover contrast-[1.05] rounded-sm minxs:hidden" // cover contain
+          width={640}
+          height={853}
           /* ADAPT BEFORE Finalising project for best performance
           sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw" */
           //fill

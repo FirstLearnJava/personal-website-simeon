@@ -17,7 +17,7 @@ export default async function ProjectPage(params: {
   const t = await getTranslations('DynamicProjects');
 
   return (
-    <div className="flex sm:flex-col justify-center text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-61px-49px)]">
+    <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-62px-50px)]">
       <div className="w-[180px] md:w-[150px] sm:w-full z-40">
         <div className="fixed sm:static md:w-[150px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
           <div className="h-full flex flex-col mt-14 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
@@ -61,7 +61,7 @@ export default async function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="my-14 sm:mt-16 xs:mt-14">
+      <div className="mb-14 sm:mt-16 xs:mt-14">
         <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>

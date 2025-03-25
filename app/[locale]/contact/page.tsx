@@ -5,7 +5,7 @@ import { Link } from '@/i18n/routing';
 export default function ContactPage() {
   const t = useTranslations('ContactPage');
   return (
-    <div className="mt-[61px] bg-[#FDFDFD] px-20 pt-9 pb-16 ">
+    <div className="mt-[62px] bg-[#FDFDFD] px-20 pt-9 pb-16 ">
       <h2 className="pl-24 text-[44px] font-lora tracking-[0.01em]">
         {t('contactPageTitle')}
       </h2>

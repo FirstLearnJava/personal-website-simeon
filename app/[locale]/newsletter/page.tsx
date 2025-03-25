@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export default function NewsletterPage() {
   const t = useTranslations('Newsletter');
   return (
-    <div className="flex flex-col items-center mt-[61px] pb-9 font-medium">
+    <div className="flex flex-col items-center mt-[62px] pb-9 font-medium">
       <h1 className="mt-14 font-mont text-[36px]">
         {t('welcomeToNewsletter')}
       </h1>

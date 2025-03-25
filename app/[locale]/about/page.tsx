@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export default function AboutPage() {
   const translation = useTranslations('AboutPage');
   return (
-    <div className="mt-[61px] bg-[#FDFDFD] px-20 pt-8 pb-8">
+    <div className="mt-[62px] bg-[#FDFDFD] px-20 pt-8 pb-8">
       <h2 className="pl-24 text-[44px] font-lora tracking-[0.01em] fixed mt-1">
         Simeon Ohlsen
       </h2>
