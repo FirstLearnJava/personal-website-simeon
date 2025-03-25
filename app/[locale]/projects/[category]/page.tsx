@@ -61,7 +61,7 @@ export default async function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="mb-14 sm:mt-16 xs:mt-14">
+      <div className="mb-14 mt-[60px] sm:mt-12 xs:mt-11">
         <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>

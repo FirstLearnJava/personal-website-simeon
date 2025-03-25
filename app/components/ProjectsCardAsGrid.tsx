@@ -56,7 +56,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'landscape-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[72vw] sm:!w-[80vw] xs:!w-[82vw]'} h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]'} h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full mt-1">
           {professionsType}
@@ -107,7 +107,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'portrait-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[66vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[72vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[60vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider mt-1   ">
           {professionsType}

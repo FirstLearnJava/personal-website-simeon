@@ -23,7 +23,7 @@ export default async function HomePage({ params }: { params: Params }) {
   return (
     <div className="flex flex-col bg-projectBackground">
       <div className="w-full h-[100vh] sm:hidden ">
-        <div className="absolute top-[] left-0 w-full h-[calc(100vh-62px)] z-10">
+        <div className="absolute top-[62px] left-0 w-full h-[calc(100vh-62px)] z-10">
           <Image
             alt="Simeon dancing in the nature"
             src={homepageCover}
@@ -82,12 +82,13 @@ export default async function HomePage({ params }: { params: Params }) {
       </div>
 
       <div className="z-20 w-full flex items-center flex-col">
+        {/*  <h2 className="font-lora text-3xl mt-8"> My Projects</h2> */}
         {/* <div className="bg-gradient-to-b from-[rgb(230,235,240)] w-full to-[rgb(241,245,248)] h-32"></div>
         Example when transition point is not 50% bg-[linear-gradient(180deg,rgb(224,231,236)_32%,rgb(241,245,248)_100%)]
         How to make a linear gradient with tailwind --> Use https://cssgradient.io/
         */}
         <div
-          className={`flex-col flex items-center w-full  pt-32 xxl:pt-24 xl:pt-16 xs:pt-8 pb-16`}
+          className={`flex-col flex items-center w-full  pt-32 xxl:pt-24 xl:pt-20 lg:pt-16 md:pt-14 sm:pt-11 xs:pt-9 pb-16`}
         >
           {/* <h2 className="font-lora text-4xl mb-12 text-white">Projects</h2> */}
           {/* original brighter bg-color: /* F9FAFF & #f7fdf5 */}
