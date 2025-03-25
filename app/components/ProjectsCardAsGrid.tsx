@@ -56,7 +56,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'landscape-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]'} h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[60vw] md:!w-[66vw] sm:!w-[80vw] xs:!w-[82vw]'} h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full mt-1">
           {professionsType}
@@ -107,7 +107,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'portrait-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[60vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[60vw] md:!w-[66vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider mt-1   ">
           {professionsType}
@@ -120,11 +120,11 @@ const ProjectsCardAsGrid = ({
           {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
           {publishedOnAndBy}
         </p>
-        <div className="flex justify-center gap-[22px] mb-8 h-full">
+        <div className="flex xs:flex-col-reverse justify-center xs:items-center gap-[22px] xs:gap-1 mb-8 h-full">
           <div className="mt-1 sm:mt-0 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
-                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[17]"
+                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[17] xs:line-clamp-4"
                 ref={textRefLandscape}
               >
                 {article}
@@ -142,7 +142,7 @@ const ProjectsCardAsGrid = ({
           </div>
           <Link
             href={`/project/${id}`}
-            className="max-h-[600px] flex-shrink-0 w-[56%]"
+            className="max-h-[600px] flex-shrink-0 w-[56%] md: xs:w-[80%]"
           >
             <Image
               alt={`project image about ${title}`}
@@ -154,7 +154,7 @@ const ProjectsCardAsGrid = ({
             />
 
             {checkCopyright() && (
-              <p className=" text-xs text-left hover:cursor-default ml-[2px] mt-[1px] ">
+              <p className="text-xs text-left hover:cursor-default ml-[2px] mt-[1px]">
                 &copy; {copyrightImage}
               </p>
             )}
