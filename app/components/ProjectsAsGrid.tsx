@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import ProjectsCardAsGrid from './ProjectsCardAsGrid';
 import { Project } from '../actions/fetchWordpressData';
-import { usePathname } from '@/i18n/routing';
+import { usePathname, useRouter } from '@/i18n/routing';
 
 const ProjectsAsGrid = ({
   category,
@@ -16,7 +16,17 @@ const ProjectsAsGrid = ({
 }) => {
   const projects = data;
   const pathname = usePathname();
+  const router = useRouter();
   const isOnProjectsPath = pathname.includes('projects');
+  const viewPortWidth = window.innerWidth;
+
+  useEffect(() => {
+    if (window) {
+      if (viewPortWidth < 639 && category === 'all') {
+        router.replace('dance', { locale: locale });
+      }
+    }
+  }, [viewPortWidth]);
   //const [locale, setLocale] = useState<string>('en');
 
   const revisedCategory = () => {

@@ -144,11 +144,9 @@ const Header = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav
-        className={` fixed w-full flex justify-between px-16 xl:px-12 md:px-8 py-4 border-b-[1px] z-50 bg-[--background] border-black text-lg font-medium h-[62px] sm:[h-64px]`}
+        className={` fixed w-full flex justify-between px-16 xl:px-12 md:px-8 sm:px-7 xs:px-6 py-4 border-b-[1px] z-50 bg-[--background] border-black text-lg font-medium h-[62px] sm:[h-64px]`}
       >
-        {/* Desktop Navigation (Hidden on `sm`) */}
         <div className="text-[#333] sm:hidden">
           <ul className="flex gap-8 md:gap-6">
             <li className="hover:text-black hover:scale-[1.03]">
@@ -163,7 +161,6 @@ const Header = () => {
           </ul>
         </div>
 
-        {/* Right Side Icons */}
         <ul className="flex gap-6 items-center">
           <li>
             <Link
@@ -244,7 +241,7 @@ const Header = () => {
       {/* Overlay to close menu when clicked outside */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-white opacity-50 z-40 sm:block hidden"
+          className="fixed inset-0 bg-white opacity-40 z-40 sm:block hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}

@@ -113,7 +113,7 @@ const ProjectsCardAsGrid = ({
           {professionsType}
         </h2>
 
-        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1 xs:mt-0 xs:mb-3">
+        <h2 className="text-xl xl:text-lg lg:text-xl xl:tracking-tight lg:tracking-normal text-center mt-1 xs:mt-0 xs:mb-2">
           {title}
         </h2>
         <p className="xs:hidden font-mont text-xs xl:text-[0.6875rem] lg:text-xs xl:tracking-tight lg:tracking-normal mb-4 sm:mb-5 text-center">
@@ -124,7 +124,7 @@ const ProjectsCardAsGrid = ({
           <div className="mt-1 sm:mt-0 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
-                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[17] xs:line-clamp-4"
+                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4"
                 ref={textRefLandscape}
               >
                 {article}
@@ -142,7 +142,7 @@ const ProjectsCardAsGrid = ({
           </div>
           <Link
             href={`/project/${id}`}
-            className="max-h-[600px] flex-shrink-0 w-[56%] md: xs:w-[80%]"
+            className="max-h-[600px] flex-shrink-0 w-[56%] xs:w-[88%]"
           >
             <Image
               alt={`project image about ${title}`}
