@@ -19,14 +19,14 @@ export default async function ProjectPage(params: {
   return (
     <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-62px-50px)]">
       <div className="w-[180px] md:w-[150px] sm:w-full z-40">
-        <div className="fixed sm:static md:w-[150px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
+        <div className="fixed sm:static md:w-[160px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
           <div className="h-full flex flex-col mt-14 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
             <div className="">
               <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base sm:hidden">
                 {t('categories')}
               </h2>
               <ul
-                className={` *:border-b sm:*:border-0 *:border-gray-800 *:mb-3 sm:*:mb-0 *:pb-[1px] sm:*:pb-0 minmd:*:w-[134px] minsm:*:w-[7rem] mt-[2px] sm:mt-0 sm:flex  sm:justify-around sm:w-[100vw] sm:text-lg xs:px-4`}
+                className={`*:border-b sm:*:border-0 *:border-gray-800 *:mb-3 sm:*:mb-0 *:pb-[1px] sm:*:pb-0  minsm:*:w-[134px] mt-[2px] sm:mt-0 sm:flex  sm:justify-around sm:w-[100vw] sm:text-lg xs:px-4`}
               >
                 <li
                   className={`${category === 'all' ? 'font-semibold !border-black !italic sm:*:!border-b sm:*:border-black' : ''} hidden sm:*:pb-[1px] `}

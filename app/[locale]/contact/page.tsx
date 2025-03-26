@@ -5,13 +5,13 @@ import { Link } from '@/i18n/routing';
 export default function ContactPage() {
   const t = useTranslations('ContactPage');
   return (
-    <div className="mt-[62px] bg-[#FDFDFD] px-20 xs:px-9 pt-24 lg:pt-20 sm:pt-14 xs:pt-12 pb-16 ">
+    <div className="mt-[62px] bg-projectBackground px-20 xs:px-9 pt-24 lg:pt-20 sm:pt-14 xs:pt-12 pb-16 min-h-[calc(100vh-112px)]">
       <h2 className="ml-32 xl:ml-28 lg:ml-20 md:ml-10 sm:ml-0 text-[44px] md:text-[38px] xs:text-[34px] font-lora tracking-[0.01em]">
         {t('contactPageTitle')}
       </h2>
-      <div className=" mt-4 lg:mt-3 md:mt-3 text-[20px] md:text-lg font-mont flex-col ml-52 xl:ml-48 lg:ml-36 md:ml-24 sm:ml-1 gap-32 sm:gap-36 leading-7 mr-[140px] sm:mr-0 font-medium ">
-        <div className="leading-8 w-fit">
-          <p className="hover:underline sm:mb-1">
+      <div className=" mt-4 lg:mt-3 md:mt-3 text-[1.25rem] md:text-lg font-dmSans flex-col ml-52 xl:ml-48 lg:ml-36 md:ml-24 sm:ml-1 gap-32 sm:gap-36 leading-7 mr-[140px] sm:mr-0 font-medium ">
+        <div className="leading-8 w-fit ">
+          <p className="hover:underline sm:mb-2 md:text-lg">
             <Link href={'mailto:contact@simeonohlsen.com'}>
               contact@simeonohlsen.com
             </Link>
@@ -21,17 +21,17 @@ export default function ContactPage() {
               instagram.com/simeonmalte
             </Link>
           </p> */}
-          <p className="hover:underline">
+          <p className="hover:underline md:text-lg">
             <Link href={'tel:+436702013512'}>+436702013512</Link>
           </p>
         </div>
-        <p className="w-[400px] sm:w-full tracking-wide mt-3 sm:mt-4">
+        <p className="w-[400px] sm:w-full tracking-wide mt-3 sm:mt-4 md:text-lg">
           {t('newsletterInfo')}
         </p>
-        <p className="sm:font-semibold">
+        <p className="sm:font-semibold mt-[2px]">
           <Link
             href={'/newsletter'}
-            className="underline font-medium hover:font-semibold font-semibold"
+            className="hover:font-semibold font-semibold md:text-[19px] underline underline-offset-4"
           >
             Newsletter
           </Link>
