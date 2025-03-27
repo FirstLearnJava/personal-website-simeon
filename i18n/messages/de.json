@@ -23,6 +23,7 @@
 
   "Newsletter": {
     "welcomeToNewsletter": "Herzlich Willkommen zu meinem Newsletter!",
+    "welcomeToNewsletterShortVersion": "Willkommen zu meinem Newsletter!",
     "enterFirstName": "Wie lautet Ihr Vorname?",
     "enterLastName": "Wie lautet Ihr Nachname?",
     "enterEmail": "Ihre Email-Adresse:",

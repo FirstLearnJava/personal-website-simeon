@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function ImprintPage() {
   return (
-    <div className="flex justify-center font-mont text-base font-medium px-20 mt-[62px] pb-8">
-      <div className="flex flex-col gap-4">
-        <h1 className="flex justify-center mb-8 text-[42px] font-mont font-semibold mt-16">
+    <div className="flex justify-center font-mont text-base font-medium mt-[62px] pb-8">
+      <div className="flex flex-col gap-3 sm:gap-2 w-[80%] xxl:w-[86%] lg:w-full lg:px-9 md:px-7 xs:px-6 ">
+        <h1 className="flex justify-center mb-8 sm:mb-5 text-[42px] font-mont font-semibold mt-16">
           Impressum
         </h1>
         <div className="*:mt-2 mt-5">

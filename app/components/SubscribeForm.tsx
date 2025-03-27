@@ -33,7 +33,7 @@ function SubscribeForm() {
     });
   }, []); */
   return (
-    <div className="flex flex-col space-y-8 w-[500px]">
+    <div className="flex flex-col space-y-8 w-[500px] xxl:w-[460px] xl:w-[420px] sm:w-full">
       <Formik
         initialValues={{
           email: '',
@@ -105,11 +105,11 @@ function SubscribeForm() {
         <Form className="w-full flex flex-col items-center gap-4 mt-7">
           <label className="w-full">
             <span className="ml-2">{translation('enterEmail')}</span>
-            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1 bg-white">
               <Field
                 type="email"
                 name="email"
-                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-[10px] xl:py-2 outline-none"
                 placeholder="Email"
                 autoComplete="off"
               />
@@ -117,10 +117,10 @@ function SubscribeForm() {
           </label>
           <label className="w-full">
             <span className="ml-2">{translation('enterFirstName')}</span>
-            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1 bg-white">
               <Field
                 name="firstName"
-                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-[10px] xl:py-2 outline-none"
                 placeholder="First name"
                 autoComplete="off"
               />
@@ -128,17 +128,17 @@ function SubscribeForm() {
           </label>
           <label className="w-full">
             <span className="ml-2">{translation('enterLastName')}</span>
-            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1">
+            <div className="w-full bg-transparent border flex-1 border-black rounded-2xl flex gap-2 px-3 mt-1 bg-white">
               <Field
                 name="lastName"
-                className="w-full grow rounded-md bg-transparent text-base px-2 py-3 outline-none"
+                className="w-full grow rounded-md bg-transparent text-base px-2 py-[10px] xl:py-2 outline-none"
                 placeholder="Last name"
                 autoComplete="off"
               />
             </div>
           </label>
           <button
-            className="rounded-full bg-black mt-3 px-4 py-2 font-bold text-gray-100 transition-all hover:scale-105 hover:bg-gray-900 disabled:opacity-80 w-40 text-center"
+            className="rounded-full bg-black mt-[14px] xl:mt-2 px-4 py-2 font-bold text-gray-100 transition-all hover:scale-105 hover:bg-gray-900 disabled:opacity-80 w-40 text-center"
             type="submit"
             disabled={buttonDisabled}
           >

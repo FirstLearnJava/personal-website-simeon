@@ -31,7 +31,7 @@ export default function ContactPage() {
         <p className="sm:font-semibold mt-[2px]">
           <Link
             href={'/newsletter'}
-            className="hover:font-semibold font-semibold md:text-[19px] underline underline-offset-4"
+            className="hover:font-semibold font-semibold md:text-[18px] underline underline-offset-4"
           >
             Newsletter
           </Link>

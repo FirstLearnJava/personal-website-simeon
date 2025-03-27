@@ -25,7 +25,7 @@ export default {
       xl: { max: '1279px' },
       // => @media (max-width: 1279px) { ... }
 
-      lg: { max: '1019px' },
+      lg: { max: '1025px' },
       // => @media (max-width: 1023px) { ... }
 
       md: { max: '769px' },
@@ -36,7 +36,7 @@ export default {
       xs: { max: '479px' },
       minxxl: { min: '1459px' },
       minxl: { min: '1279px' },
-      minlg: { min: '1019px' },
+      minlg: { min: '1025px' },
       minmd: { min: '769px' },
       minsm: { min: '639px' },
       minxs: { min: '479px' },
