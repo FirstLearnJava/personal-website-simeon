@@ -5,7 +5,7 @@ import { Link } from '@/i18n/routing';
 export default function ContactPage() {
   const t = useTranslations('ContactPage');
   return (
-    <div className="mt-[62px] bg-projectBackground px-20 xs:px-9 pt-24 lg:pt-20 sm:pt-14 xs:pt-12 pb-16 min-h-[calc(100vh-112px)]">
+    <div className="mt-[62px] bg-projectBackground px-20 xs:px-9 pt-[4rem] lg:pt-[4.25rem] md:pt-[3.75rem] sm:pt-14 xs:pt-12 pb-16 min-h-[calc(100vh-112px)]">
       <h2 className="ml-32 xl:ml-28 lg:ml-20 md:ml-10 sm:ml-0 text-[44px] md:text-[38px] xs:text-[34px] font-lora tracking-[0.01em]">
         {t('contactPageTitle')}
       </h2>
@@ -16,22 +16,22 @@ export default function ContactPage() {
               contact@simeonohlsen.com
             </Link>
           </p>
-          {/*  <p className="hover:underline">
+          <p className="hover:underline sm:mb-1 md:text-lg">
             <Link href={'https://www.instagram.com/simeonmalte'}>
               instagram.com/simeonmalte
             </Link>
-          </p> */}
+          </p>
           {/* <p className="hover:underline md:text-lg">
             <Link href={'tel:+436702013512'}>+436702013512</Link>
           </p> */}
         </div>
-        <p className="w-[400px] sm:w-full tracking-wide mt-3 sm:mt-2 md:text-lg">
+        <p className="w-[400px] sm:w-full tracking-wide mt-2 sm:mt-3 md:text-lg">
           {t('newsletterInfo')}
         </p>
         <p className="sm:font-semibold mt-[2px]">
           <Link
             href={'/newsletter'}
-            className="hover:font-semibold font-semibold md:text-[18px] underline underline-offset-4"
+            className="hover:font-semibold font-semibold md:text-[1.125rem] text-[19px] underline underline-offset-4"
           >
             Newsletter
           </Link>

@@ -48,6 +48,28 @@
     "artMediation": "Art Mediation",
     "allProjects": "All Projects"
   },
+  "Impress": {
+    "impressTitle": "Impress",
+    "informationProvider": "Information about the Service Provider",
+    "websiteContentLiability": "Liability for Website Content",
+    "websiteContentLiability1": "We continuously develop the content of this website and strive to provide correct and up-to-date information. Unfortunately, we cannot assume liability for the correctness of all content on this website, especially for content provided by third parties. As a service provider, we are not obligated to monitor or investigate the information you submit or store for circumstances indicating unlawful activity.",
+    "websiteContentLiability2": "Our obligations to remove information or block the use of information under general laws based on court or official orders remain unaffected, even in cases of our non-responsibility.",
+    "websiteContentLiability3": "If you notice any problematic or unlawful content, we ask you to contact us immediately so that we can remove the unlawful content. You can find the contact details in the imprint.",
+    "websiteLinkLiability": "Liability for Links on This Website",
+    "websiteLinkLiability1": "Our website contains links to other websites for whose content we are not responsible. We are not liable for linked websites, as we had no knowledge of unlawful activities and have not noticed any such unlawfulness, and we would immediately remove links if we became aware of any legal violations.",
+    "websiteLinkLiability2": "If you notice any unlawful links on our website, please contact us. You can find the contact details in the imprint.",
+    "copyrightNotice": "Copyright Notice",
+    "copyrightNotice1": "All content on this website (images, photos, texts, videos) is subject to copyright. Please ask us before distributing, reproducing, or utilizing the content of this website, such as republishing on other websites. If necessary, we will legally pursue unauthorized use of parts of our website's content.",
+    "copyrightNotice2": "If you find content on this website that infringes copyright, we ask you to contact us.",
+    "imageCredits": "Image Credits",
+    "imageCredits1": "The images, photos, and graphics on this website are protected by copyright.",
+    "imageCredits2": "Image rights belong to:",
+    "imageCredits3": "Photographer",
+    "imageCredits4": "The rights holder of the respective project image are mentioned by name under the image.",
+    "otherPresences": "Other Online Presences",
+    "otherPresences1": "This imprint also applies to:",
+    "newsletter1": "We only send newsletters with the consent of the recipients. To consent to the newsletter, it is sufficient to provide your email address."
+  },
   "Footer": {
     "contact": "Contact",
     "imprint": "Imprint"
