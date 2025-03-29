@@ -49,7 +49,7 @@ const ProjectsCard = ({
         {article}
       </p>
       {externalReferenceLink && !externalReferenceLink2 && (
-        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 mb-7 xxl:mb-3 sm:mb-4 hover:underline sm:text-sm">
+        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 mb-7 xxl:mb-3 sm:mb-4 hover:underline text-base xxl:text-sm">
           <Link
             href={externalReferenceLink}
             target="_blank"
@@ -60,7 +60,7 @@ const ProjectsCard = ({
         </p>
       )}
       {externalReferenceLink && externalReferenceLink2 && (
-        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 sm:mt-2 hover:underline sm:text-sm">
+        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 sm:mt-2 hover:underline text-base xxl:text-sm">
           <Link
             href={externalReferenceLink}
             target="_blank"
@@ -71,7 +71,7 @@ const ProjectsCard = ({
         </p>
       )}
       {externalReferenceLink2 && externalReferenceLink && (
-        <p className="w-full sm:mt-2 pb-7 xxl:pb-3 sm:pb-4 hover:underline sm:text-sm">
+        <p className="w-full sm:mt-2 pb-7 xxl:pb-3 sm:pb-4 hover:underline text-base xxl:text-sm">
           <Link
             href={externalReferenceLink2}
             target="_blank"
