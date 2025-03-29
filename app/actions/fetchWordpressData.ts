@@ -18,6 +18,8 @@ export interface Project {
       slug: string;
     };
     copyright_image?: string;
+    external_reference_link?: string;
+    external_reference_link_2?: string;
   };
 }
 

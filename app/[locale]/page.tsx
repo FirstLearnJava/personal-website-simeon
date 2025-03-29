@@ -19,6 +19,9 @@ export default async function HomePage({ params }: { params: Params }) {
   const translation = await getTranslations('HomePage');
   const awaitedParams = await params;
   const paramsLocale = awaitedParams.locale;
+  console.log(
+    'Website developed by Matthias Floimayr. Feel free to contact me, at matthiasfloimayr@gmail.com',
+  );
 
   return (
     <div className="flex flex-col bg-projectBackground">

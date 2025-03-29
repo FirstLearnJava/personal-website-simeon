@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export interface ProjectsCard {
@@ -8,6 +9,8 @@ export interface ProjectsCard {
   imageUrl: string;
   article: string;
   locale: string | undefined;
+  externalReferenceLink: string | undefined;
+  externalReferenceLink2: string | undefined;
 }
 
 const ProjectsCard = ({
@@ -17,9 +20,11 @@ const ProjectsCard = ({
   imageUrl,
   article,
   locale,
+  externalReferenceLink,
+  externalReferenceLink2,
 }: ProjectsCard) => {
   return (
-    <div className="pb-6 sm:pb-4 flex flex-col items-center justify-center max-w-[700px] lg:max-w-[660px] md:max-w-full md:px-10 mt-12 xxl:mt-9 lg:mt-16 md:mt-12 sm:mt-8">
+    <div className="pb-6 xxl:pb-5 sm:pb-4 flex flex-col items-center justify-center max-w-[700px] lg:max-w-[660px] md:max-w-full md:px-10 mt-12 xxl:mt-9 lg:mt-12 md:mt-10 sm:mt-8">
       <h2 className="border-b-[1px] border-blue-900 text-center px-2 sm:w-full mb-3 pb-[2px] sm:mb-1 uppercase font-mont tracking-wider text-sm sm:text-[0.8125rem]">
         {professionsType}
       </h2>
@@ -32,7 +37,7 @@ const ProjectsCard = ({
       </p>
       <div className="flex justify-center">
         <Image
-          alt={`project image about ${title}`}
+          alt={`project image ${title}`}
           src={imageUrl}
           width={600}
           height={600}
@@ -43,6 +48,39 @@ const ProjectsCard = ({
       <p className="font-mont text-base xxl:text-sm mt-3 mb-3 sm:mb-2 xxl:mb-2 leading-6 sm:leading-[22px] ">
         {article}
       </p>
+      {externalReferenceLink && !externalReferenceLink2 && (
+        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 mb-7 xxl:mb-3 sm:mb-4 hover:underline sm:text-sm">
+          <Link
+            href={externalReferenceLink}
+            target="_blank"
+            className="hover:underline"
+          >
+            {externalReferenceLink}
+          </Link>
+        </p>
+      )}
+      {externalReferenceLink && externalReferenceLink2 && (
+        <p className="w-full mt-1 xxl:mt-0 lg:mt-1 sm:mt-2 hover:underline sm:text-sm">
+          <Link
+            href={externalReferenceLink}
+            target="_blank"
+            className="hover:underline"
+          >
+            {externalReferenceLink}
+          </Link>
+        </p>
+      )}
+      {externalReferenceLink2 && externalReferenceLink && (
+        <p className="w-full sm:mt-2 pb-7 xxl:pb-3 sm:pb-4 hover:underline sm:text-sm">
+          <Link
+            href={externalReferenceLink2}
+            target="_blank"
+            className="hover:underline"
+          >
+            {externalReferenceLink2}
+          </Link>
+        </p>
+      )}
     </div>
   );
 };

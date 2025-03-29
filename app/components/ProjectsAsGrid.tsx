@@ -18,13 +18,20 @@ const ProjectsAsGrid = ({
   const pathname = usePathname();
   const router = useRouter();
   const isOnProjectsPath = pathname.includes('projects');
-  const viewPortWidth = window.innerWidth;
+  const [viewPortWidth, setViewPortWidth] = useState(640);
 
   useEffect(() => {
-    if (window) {
-      if (viewPortWidth < 639 && category === 'all') {
-        router.replace('dance', { locale: locale });
-      }
+    setViewPortWidth(window.innerWidth);
+
+    const handleResize = () => setViewPortWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (viewPortWidth < 639 && category === 'all') {
+      router.replace('dance', { locale: locale });
     }
   }, [viewPortWidth]);
   //const [locale, setLocale] = useState<string>('en');

@@ -31,7 +31,7 @@ const Projects = ({
     if (!projectInOtherLanguage) return;
     const currentLocale = sessionStorage.getItem('singleProjectLocale');
     if (currentLocale !== paramsLocale && currentLocale !== undefined) {
-      console.log(`${paramsLocale}/projects/${projectInOtherLanguage.id}`);
+      /* console.log(`${paramsLocale}/projects/${projectInOtherLanguage.id}`); */
       sessionStorage.setItem('singleProjectLocale', paramsLocale);
       redirect({
         href: `/project/${projectInOtherLanguage.id}`,
@@ -79,6 +79,8 @@ const Projects = ({
         imageUrl={projectById.acf.image}
         article={projectById.acf.article}
         locale={paramsLocale}
+        externalReferenceLink={projectById.acf.external_reference_link}
+        externalReferenceLink2={projectById.acf.external_reference_link_2}
       />
     </div>
   );
