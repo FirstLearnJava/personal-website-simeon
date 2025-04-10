@@ -6,14 +6,14 @@ const Footer = () => {
   const t = useTranslations('Footer');
   return (
     <footer className="border-t-[1px] border-[#9f9f9f] pt-3 pb-2 px-20 font-medium z-50 bg-white text-lg h-[50px]">
-      <ul className="flex w-full justify-center gap-8">
-        <li>
+      <ul className="flex w-full justify-center lg:gap-8 gap-32">
+        <li className="hover:scale-105">
           <Link href="/contact">{t('contact')}</Link>
         </li>
-        <li>
+        <li className="hover:scale-105">
           <Link href="/newsletter">Newsletter</Link>
         </li>
-        <li>
+        <li className="hover:scale-105">
           <Link href="/imprint">{t('imprint')}</Link>
         </li>
       </ul>
