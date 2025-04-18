@@ -87,7 +87,7 @@ const ProjectsCardAsGrid = ({
 
         <p
           ref={textRefLandscape}
-          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'} tracking-wide line-clamp-5 xl:line-clamp-4  xl:text-sm md:text-[0.8125rem] md:leading-[22px]`}
+          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'} tracking-[0.0125rem] line-clamp-5 xl:line-clamp-4  xl:text-sm md:text-[0.8125rem] md:leading-[22px]`}
         >
           {article}
         </p>
@@ -124,7 +124,7 @@ const ProjectsCardAsGrid = ({
           <div className="mt-1 sm:mt-0 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
-                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] md:leading-[22px] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4 tracking-wide "
+                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] md:leading-[22px] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4 tracking-[0.0125rem] "
                 ref={textRefLandscape}
               >
                 {article}

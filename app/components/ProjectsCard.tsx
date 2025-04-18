@@ -45,7 +45,7 @@ const ProjectsCard = ({
           priority={true}
         />
       </div>
-      <p className="font-mont text-base xxl:text-sm mt-3 mb-[6px] sm:mb-1 leading-6 sm:leading-[24px] minsm:text-justify xl:tracking-wide">
+      <p className="font-mont text-base xxl:text-sm mt-3 mb-[6px] sm:mb-1 leading-6 sm:leading-[24px] minsm:text-justify xl:tracking-[0.0125rem]">
         {article}
       </p>
       {externalReferenceLink && !externalReferenceLink2 && (
