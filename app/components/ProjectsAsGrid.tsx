@@ -55,7 +55,7 @@ const ProjectsAsGrid = ({
   }, []); */
   return (
     <div className="h-full">
-      <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-[18%] xxl:gap-x-[16%] gap-y-28 xl:gap-y-[80px] xs:gap-y-[60px] justify-items-center">
+      <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-[18%] xxl:gap-x-[16%] gap-y-28 xl:gap-y-[80px] xs:gap-y-[60px] xs:px-7 justify-items-center">
         {!Array.isArray(projects) || projects.length === 0 ? (
           <div
             className={`h-full text-2xl font-mont col-span-2 text-center italic pb-[7vh]  ${isOnProjectsPath ? 'pt-[10vh]' : ''}`}

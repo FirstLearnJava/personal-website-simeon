@@ -24,11 +24,11 @@ const ProjectsCard = ({
   externalReferenceLink2,
 }: ProjectsCard) => {
   return (
-    <div className="pb-6 xxl:pb-5 sm:pb-4 flex flex-col items-center justify-center max-w-[700px] lg:max-w-[660px] md:max-w-full sm:max-w-[100vw] md:px-10 mt-12 xxl:mt-9 lg:mt-12 md:mt-10 sm:mt-8">
+    <div className="pb-6 xxl:pb-5 sm:pb-4 flex flex-col items-center justify-center max-w-[700px] lg:max-w-[660px] md:max-w-full sm:max-w-[100vw] md:px-10 sm:px-8 xs:px-7 mt-12 xxl:mt-9 lg:mt-12 md:mt-10 sm:mt-8 ">
       <h2 className="border-b-[1px] border-blue-900 text-center px-2 sm:w-full mb-3 pb-[2px] sm:mb-1 uppercase font-mont tracking-wider text-sm sm:text-[0.8125rem]">
         {professionsType}
       </h2>
-      <h2 className="text-center mb-[2px] xxl:mb-0 text-2xl xxl:text-xl sm:text-lg lg:mt-1 sm:mt-[6px]">
+      <h2 className="text-center mb-[2px] xxl:mb-0 text-2xl xxl:text-xl tracking-wide sm:text-lg lg:mt-1 sm:mt-[6px]">
         {title}
       </h2>
       <p className="text-center font-mont text-sm xxl:text-[0.8125rem] sm:text-xs mb-3 sm:mb-2">
@@ -45,7 +45,7 @@ const ProjectsCard = ({
           priority={true}
         />
       </div>
-      <p className="font-mont text-base xxl:text-sm mt-3 mb-[6px] sm:mb-1 leading-6 sm:leading-[22px] ">
+      <p className="font-mont text-base xxl:text-sm mt-3 mb-[6px] sm:mb-1 leading-6 sm:leading-[24px] minsm:text-justify xl:tracking-wide">
         {article}
       </p>
       {externalReferenceLink && !externalReferenceLink2 && (
