@@ -38,12 +38,12 @@ export default async function HomePage({ params }: { params: Params }) {
             priority
           />
         </div>
-        <div className="absolute z-40 top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[30%] left-[64%] xl:left-[61%] lg:left-[56%] sm:left-[53%] text-white sm:w-[220px] overflow-hidden">
-          <h1 className=" text-[50px] xxl:text-[44px] xl:text-[40px] lg:text-[36px] md:text-[34px] sm:text-[30px] leading-9">
+        <div className="absolute z-40 top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[31.6%] md:top-[31.5%] left-[64%] xl:left-[61%] lg:left-[53%] md:left-[53%] text-white sm:w-[220px] overflow-hidden">
+          <h1 className=" text-[50px] xxl:text-[44px] xl:text-[42px] lg:text-[40px] md:text-[36px] sm:text-[30px] leading-9">
             Simeon Ohlsen
           </h1>
 
-          <p className=" font-mont ml-10 md:ml-0 md:text-center text-[22px] xxl:text-[20px] xl:text-[18px] lg:text-[16px] text-white font-medium">
+          <p className=" font-mont ml-10 md:ml-4 lg:leading-5 text-[22px] xxl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[18px] text-white font-medium">
             {translation('professionalSkills')}
           </p>
         </div>

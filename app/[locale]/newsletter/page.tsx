@@ -14,7 +14,7 @@ export default function NewsletterPage() {
       </h1>
 
       <SubscribeForm />
-      <div className="w-[720px] xxl:w-[660px] xl:w-[600px] sm:w-full mt-16 xxl:mt-14 lg:mt-[70px] text-base flex flex-col gap-[2px] sm:gap-[6px]">
+      <div className="w-[720px] xxl:w-[660px] xl:w-[600px] sm:w-full mt-16 xxl:mt-14 lg:mt-[70px] sm:mt-[60px] text-base flex flex-col gap-[2px] sm:gap-[6px]">
         <h2 className="font-semibold text-lg">{t('newsletterInfos')}</h2>
         <p>{t('doubleOptIn')}</p>
         <p>{t('optOut')}</p>
