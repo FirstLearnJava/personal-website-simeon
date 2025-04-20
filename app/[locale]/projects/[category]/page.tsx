@@ -20,7 +20,7 @@ export default async function ProjectPage(params: {
     <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-62px-50px)]">
       <div className="w-[180px] md:w-[150px] sm:w-full z-40">
         <div className="fixed sm:static md:w-[160px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
-          <div className="h-full flex flex-col mt-14 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
+          <div className="h-full flex flex-col mt-14 xxxl:mt-12 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
             <div className="">
               <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base sm:hidden">
                 {t('categories')}
@@ -61,7 +61,7 @@ export default async function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="mb-14 mt-[60px] sm:mt-12 xs:mt-11">
+      <div className="mb-14 mt-[60px] xxxl:mt-12 sm:mt-12 xs:mt-11">
         <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>

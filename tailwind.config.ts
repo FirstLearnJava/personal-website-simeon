@@ -21,6 +21,7 @@ export default {
       },
     },
     screens: {
+      xxxl: { max: '1560px' },
       xxl: { max: '1459px' },
       xl: { max: '1279px' },
       // => @media (max-width: 1279px) { ... }

@@ -56,7 +56,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'landscape-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[82vw] xs:!w-full' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[60vw] md:!w-[66vw] sm:!w-[82vw] xs:!w-full'} h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col items-center justify-start  bg-white  rounded-[6px] px-[30px] sm:px-[1.25rem] xs:px-[1rem] pt-5 pb-10 xxxl:pb-9 relative w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxxl:!w-[34vw] xl:!w-[33vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[82vw] xs:!w-full' : 'xxl:w-[38vw] xl:w-[40vw] lg:!w-[60vw] md:!w-[66vw] sm:!w-[82vw] xs:!w-full'} h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider w-full mt-1">
           {professionsType}
@@ -87,7 +87,7 @@ const ProjectsCardAsGrid = ({
 
         <p
           ref={textRefLandscape}
-          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'} tracking-[0.0125rem] line-clamp-5 xl:line-clamp-4  xl:text-sm md:text-[0.8125rem] md:leading-[22px]`}
+          className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'} tracking-[0.0125rem] line-clamp-5 xl:line-clamp-4 lg:line-clamp-5 ${isOnProjectsPath ? 'xxxl:!line-clamp-3 lg:!line-clamp-5' : ''}  xl:text-sm md:text-[0.8125rem] md:leading-[22px]`}
         >
           {article}
         </p>
@@ -107,7 +107,7 @@ const ProjectsCardAsGrid = ({
   if (aspectRatio === 'portrait-format') {
     return (
       <div
-        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxl:w-[36vw] xl:w-[34vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[60vw] md:!w-[66vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
+        className={`border-y-[#cbcbcb] border-x-[#cccccc] border flex flex-col w-[35vw] ${isJustOneProject ? ' xxl:!w-[42vw] xl:!w-[48vw]' : ''} ${isOnProjectsPath ? 'xxxl:!w-[34vw] xl:!w-[33vw] lg:!w-[60vw] md:!w-[60vw] sm:!w-[80vw] xs:!w-[82vw]' : 'xxl:w-[38vw] xl:w-[40vw] lg:w-[60vw] md:!w-[66vw] sm:!w-[80vw] xs:!w-[82vw]'} lg:h-[100%] bg-white rounded-[6px] pt-5 px-[30px] sm:px-[1.25rem] xs:px-[1rem] h-full`}
       >
         <h2 className="border-b-[1px] border-[#333] text-center text-xs xl:text-[0.6875rem] lg:text-xs mb-3 pb-[6px] uppercase font-mont tracking-wider mt-1   ">
           {professionsType}
@@ -124,7 +124,7 @@ const ProjectsCardAsGrid = ({
           <div className="mt-1 sm:mt-0 flex-grow">
             <div className={`max-h-[500px]`}>
               <p
-                className="font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] md:leading-[22px] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4 tracking-[0.0125rem] "
+                className={`font-mont mt-[0.125rem] xs:mt-0 xxl:mt-0 text-sm xl:text-sm md:text-[0.8125rem] md:leading-[22px] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4 tracking-[0.0125rem]`}
                 ref={textRefLandscape}
               >
                 {article}
