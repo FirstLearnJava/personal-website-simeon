@@ -39,7 +39,7 @@ export default function ImprintPage() {
         <h2 className="text-lg font-semibold mt-4">{t('otherPresences')}</h2>
         <h3 className="text-md font-semibold mt-2">{t('otherPresences1')}</h3>
         <p>https://www.instagram.com/simeonmalte</p>
-        <h2 className="text-lg font-semibold mt-4"></h2>
+        <h2 className="text-lg font-semibold mt-4">Newsletter</h2>
         <p>{t('newsletter1')}</p>
       </div>
     </div>
