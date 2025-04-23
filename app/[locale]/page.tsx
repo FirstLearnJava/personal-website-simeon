@@ -5,6 +5,7 @@ import homepageCoverMobileXs from '../../public/homepage/homepageCoverMobileXs.w
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 import { getTranslations } from 'next-intl/server';
+import AnimatedText from '../components/AnimatedText';
 
 export const metadata: Metadata = {
   title: 'Simeon Ohlsen | Personal Page',
@@ -40,18 +41,18 @@ export default async function HomePage({ params }: { params: Params }) {
         </div>
         <div className="absolute z-40 top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[31.6%] md:top-[31.5%] left-[64%] xl:left-[61%] lg:left-[53%] md:left-[53%] text-white sm:w-[220px] overflow-hidden">
           <h1 className=" text-[50px] xxl:text-[44px] xl:text-[42px] lg:text-[40px] md:text-[36px] sm:text-[30px] leading-9">
-            Simeon Ohlsen
+            <AnimatedText>Simeon Ohlsen</AnimatedText>
           </h1>
 
           <p className=" font-mont ml-10 md:ml-4 lg:leading-5 text-[22px] xxl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[18px] text-white font-medium">
-            {translation('professionalSkills')}
+            <AnimatedText>{translation('professionalSkills')}</AnimatedText>
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center w-full minsm:hidden mt-[62px] mb-[30px]">
         <div className=" absolute top-[374px] xs:top-[296px] z-10 text-white">
           <h1 className="text-[50px] xs:text-[42px] leading-9 text-center">
-            Simeon Ohlsen
+            <AnimatedText>Simeon Ohlsen</AnimatedText>
           </h1>
         </div>
         <Image
