@@ -18,7 +18,12 @@ const container = {
 
 const AnimatedText = ({ children }: { children: string }) => {
   return (
-    <motion.div variants={container} initial="initial" animate="animate">
+    <motion.div
+      variants={container}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 0.12, ease: 'easeOut' }}
+    >
       {children}
     </motion.div>
   );

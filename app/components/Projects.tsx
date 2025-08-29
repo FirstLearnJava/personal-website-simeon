@@ -31,7 +31,6 @@ const Projects = ({
     if (!projectInOtherLanguage) return;
     const currentLocale = sessionStorage.getItem('singleProjectLocale');
     if (currentLocale !== paramsLocale && currentLocale !== undefined) {
-      /* console.log(`${paramsLocale}/projects/${projectInOtherLanguage.id}`); */
       sessionStorage.setItem('singleProjectLocale', paramsLocale);
       redirect({
         href: `/project/${projectInOtherLanguage.id}`,

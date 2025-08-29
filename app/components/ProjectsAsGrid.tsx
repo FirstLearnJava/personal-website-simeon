@@ -54,9 +54,9 @@ const ProjectsAsGrid = ({
     }
   }, []); */
   return (
-    <div className="h-full">
+    <div className="h-full  ">
       <div
-        className={`grid grid-cols-2 lg:grid-cols-1 gap-x-[18%] xxl:gap-x-[16%] gap-y-24 xl:gap-y-[80px] ${isOnProjectsPath ? 'xxxl:!gap-y-20' : ''} xs:gap-y-[60px] xs:px-7 justify-items-center`}
+        className={`grid grid-cols-2 lg:grid-cols-1 gap-x-[24%] xxl:gap-x-[16%] gap-y-24 xl:gap-y-[80px] ${isOnProjectsPath ? 'xxxl:!gap-y-20' : ''} xs:gap-y-[60px] xs:px-7 justify-items-center`}
       >
         {!Array.isArray(projects) || projects.length === 0 ? (
           <div
@@ -74,6 +74,7 @@ const ProjectsAsGrid = ({
                 : project.acf.profession_type.slug === revisedCategory(),
             )
             .map((project, index, arr) => {
+              const isOdd = index % 2 !== 0;
               const isLastOdd =
                 arr.length % 2 !== 0 && index === arr.length - 1;
               const isJustOneProject = arr.length === 1;
@@ -114,6 +115,7 @@ const ProjectsAsGrid = ({
                     copyrightImage={project.acf.copyright_image}
                     locale={locale}
                     isJustOneProject={isJustOneProject}
+                    isOdd={isOdd}
                   />
                 </div>
               );

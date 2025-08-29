@@ -32,8 +32,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Personal Website Simeon Ohlsen',
-  description: `Simeon Ohlsen's introduction and projects `,
+  title: 'Personal Website | Simeon Ohlsen',
+  description: `Simeon Ohlsen - Dancer, Musician & Art Mediator. I combine movement and sound to help people rediscover themselves through artistic workshops and performances. Available for collaborations & contracting.`,
 };
 
 type Params = Promise<{ locale: string }>;
