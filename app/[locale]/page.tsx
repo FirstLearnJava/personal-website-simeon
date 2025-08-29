@@ -27,7 +27,7 @@ export default async function HomePage({ params }: { params: Params }) {
   return (
     <div className="flex flex-col bg-projectBackground">
       <div className="w-full h-[100vh] sm:hidden ">
-        <div className="absolute top-[62px] left-0 w-full h-[calc(100vh-62px)] z-10">
+        <div className="absolute  left-0 w-full h-[calc(100vh)] z-10">
           <Image
             alt="Simeon dancing in the nature"
             src={homepageCover}

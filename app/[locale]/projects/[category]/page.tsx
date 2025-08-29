@@ -15,13 +15,12 @@ export default async function ProjectPage(params: {
     'font-semibold !border-black !italic sm:*:!border-b sm:*:border-black';
   const styleOnCategoryHover = 'hover:font-medium hover:border-gray-700';
   const t = await getTranslations('DynamicProjects');
-
   return (
-    <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground mt-[62px] min-h-[calc(100vh-62px-50px)]">
+    <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground min-h-[calc(100vh-50px)]">
       <div className="w-[180px] md:w-[150px] sm:w-full z-40">
-        <div className="fixed sm:static md:w-[160px] w-[180px] sm:w-full bg-[#b9cbd8] h-full sm:h-14 left-0 ">
+        <div className="fixed sm:static md:w-[160px] w-[180px] sm:w-full bg-[#b9cbd8] sm:bg-projectBackground h-full sm:h-14 left-0 ">
           <div className="h-full flex flex-col mt-14 xxxl:mt-12 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
-            <div className="">
+            <div className="pt-[62px] sm:pt-[144px]">
               <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base sm:hidden">
                 {t('categories')}
               </h2>
@@ -61,7 +60,7 @@ export default async function ProjectPage(params: {
         </div>
       </div>
 
-      <div className="mb-14 mt-[60px] xxxl:mt-12 sm:mt-12 xs:mt-11">
+      <div className="mb-14 mt-[122px] xxxl:mt-[110px] sm:mt-[86px] xs:mt-[90px]">
         <ProjectsWrapper category={category} locale={locale} />
       </div>
     </div>

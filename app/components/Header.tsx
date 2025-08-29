@@ -5,12 +5,24 @@ import { Link, useRouter } from '@/i18n/routing';
 import { InstagramIcon } from '@/public/icons/InstagramIcon';
 import { useTranslations } from 'next-intl';
 import LanguageSelector from './LanguageSelector';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const Header = () => {
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
 
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious();
+    if (previous) {
+      if (latest > previous && latest > 150) {
+        setIsNavbarHidden(false);
+      } else setIsNavbarHidden(true);
+    }
+  });
   // Prevent scrolling when the menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
@@ -26,7 +38,13 @@ const Header = () => {
 
   return (
     <>
-      <nav
+      <motion.nav
+        variants={{
+          hidden: { y: 0 },
+          visible: { y: '-100%' },
+        }}
+        animate={isNavbarHidden ? 'hidden' : 'visible'}
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
         className={` fixed w-full flex justify-between px-16 xl:px-12 md:px-8 sm:px-7 xs:px-6 py-4 border-b-[1px] z-50 bg-[--background] border-black text-lg font-medium h-[62px] sm:[h-64px]`}
       >
         <div className="text-[#333] sm:hidden">
@@ -83,7 +101,7 @@ const Header = () => {
             />
           </svg>
         </button>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Slide-in Menu (Only visible on `sm`) */}
       <div
