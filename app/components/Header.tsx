@@ -19,8 +19,8 @@ const Header = () => {
     const previous = scrollY.getPrevious();
     if (previous) {
       if (latest > previous && latest > 150) {
-        setIsNavbarHidden(false);
-      } else setIsNavbarHidden(true);
+        setIsNavbarHidden(true);
+      } else setIsNavbarHidden(false);
     }
   });
   // Prevent scrolling when the menu is open
@@ -40,8 +40,8 @@ const Header = () => {
     <>
       <motion.nav
         variants={{
-          hidden: { y: 0 },
-          visible: { y: '-100%' },
+          hidden: { y: '-100%' },
+          visible: { y: 0 },
         }}
         animate={isNavbarHidden ? 'hidden' : 'visible'}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
