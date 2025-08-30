@@ -144,12 +144,12 @@ const ProjectsCardAsGrid = ({
                   onClick={() => {
                     router.push(`/project/${id}`);
                   }}
-                  className="bg-blue-100 border-[1px] px-3 py-1 xs:text-sm border-black rounded-md font-medium inline left-0 hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem]"
+                  className="bg-blue-100 border-[1px] px-3 py-1 xs:text-sm border-black rounded-md font-medium inline left-0 hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem] font-lora"
                 >
                   {locale == 'de' ? (
-                    <span>weiterlesen...</span>
+                    <span>Weiterlesen...</span>
                   ) : (
-                    <span>keep reading...</span>
+                    <span>Read More...</span>
                   )}
                 </button>
               )}
@@ -210,12 +210,12 @@ const ProjectsCardAsGrid = ({
                       onClick={() => {
                         router.push(`/project/${id}`);
                       }}
-                      className="bg-blue-100 border-[1px] px-3 py-1 xs:text-sm border-black rounded-md font-medium inline left-0 hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem]"
+                      className="bg-blue-100 border-[1px] px-3 py-1 xs:text-sm border-black rounded-md font-medium inline left-0 hover:font-semibold lg:text-base md:text-[0.9375rem] -mt-[0.125rem] font-lora"
                     >
                       {locale == 'de' ? (
-                        <span>weiterlesen...</span>
+                        <span>Weiterlesen...</span>
                       ) : (
-                        <span>keep reading...</span>
+                        <span>Read More...</span>
                       )}
                     </button>
                   )}
