@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from '@/i18n/routing';
 import ProjectsWrapper from '@/app/components/ProjectsWrapper';
 import { getTranslations } from 'next-intl/server';
+import ClientCategoryPage from './../../../components/ClientCategoryPage';
 
 export default async function ProjectPage(params: {
   params: { category?: string; locale: string };
@@ -11,52 +11,13 @@ export default async function ProjectPage(params: {
   const resolvedParams = await params.params;
   const category = resolvedParams.category ?? '';
   const locale = resolvedParams.locale;
-  const styleWhenCategorySelected =
-    'font-semibold !border-black !italic sm:*:!border-b sm:*:border-black';
-  const styleOnCategoryHover = 'hover:font-medium hover:border-gray-700';
+
   const t = await getTranslations('DynamicProjects');
   return (
     <div className="flex sm:flex-col justify-center sm:justify-start text-base relative bg-projectBackground min-h-[calc(100vh-50px)]">
       <div className="w-[180px] md:w-[150px] sm:w-full z-40">
         <div className="fixed sm:static md:w-[160px] w-[180px] sm:w-full bg-[#b9cbd8] sm:bg-projectBackground h-full sm:h-14 left-0 ">
-          <div className="h-full flex flex-col mt-14 xxxl:mt-12 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center">
-            <div className="pt-[62px] sm:pt-[144px]">
-              <h2 className="uppercase font-mont font-medium tracking-widest mb-3 xl:mb-2 text-[1.0625rem] md:text-base sm:hidden">
-                {t('categories')}
-              </h2>
-              <ul
-                className={`*:border-b sm:*:border-0 *:border-gray-800 *:mb-3 sm:*:mb-0 *:pb-[1px] sm:*:pb-0  minsm:*:w-[134px] mt-[2px] sm:mt-0 sm:flex  sm:justify-around sm:w-[100vw] sm:text-lg xs:px-4`}
-              >
-                <li
-                  className={`${category === 'all' ? 'font-semibold !border-black !italic sm:*:!border-b sm:*:border-black' : ''} hidden sm:*:pb-[1px] `}
-                >
-                  <Link href="/projects/all">{t('allProjects')}</Link>
-                </li>
-                <li
-                  className={`${category === 'dance' ? styleWhenCategorySelected : styleOnCategoryHover}`}
-                >
-                  <Link href="/projects/dance">{t('dance')}</Link>
-                </li>
-                <li
-                  className={`${category === 'music' ? styleWhenCategorySelected : styleOnCategoryHover}`}
-                >
-                  <Link href="/projects/music">{t('music')}</Link>
-                </li>
-                <li
-                  className={` min-w-0 ${category === 'art-mediation' ? styleWhenCategorySelected : styleOnCategoryHover}`}
-                >
-                  <Link href="/projects/art-mediation">
-                    {t('artMediation')}
-                  </Link>
-                </li>
-                <li
-                  className={`${category === 'all' ? styleWhenCategorySelected : styleOnCategoryHover} sm:hidden`}
-                >
-                  <Link href="/projects/all">{t('allProjects')}</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ClientCategoryPage category={category} />
         </div>
       </div>
 
