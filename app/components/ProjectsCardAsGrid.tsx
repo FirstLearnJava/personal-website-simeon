@@ -138,7 +138,7 @@ const ProjectsCardAsGrid = ({
             >
               {article}
             </p>
-            <div className=" w-full hidden lg:flex justify-center mt-5 xs:mt-4">
+            <div className=" w-full hidden lg:flex justify-center mt-4 xs:mt-3">
               {isLandscapeOverflowed && (
                 <button
                   onClick={() => {
@@ -204,7 +204,7 @@ const ProjectsCardAsGrid = ({
                     {article}
                   </p>
                 </div>
-                <div className=" w-full hidden lg:flex justify-center mt-5 xs:mt-4">
+                <div className=" w-full hidden lg:flex justify-center mt-4 xs:mt-3">
                   {isLandscapeOverflowed && (
                     <button
                       onClick={() => {
