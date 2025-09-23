@@ -60,7 +60,7 @@ const Header = () => {
         <div className="text-[#333] sm:hidden">
           <ul className="flex gap-8 md:gap-6">
             <motion.li
-              className="hover:text-black]"
+              className="hover:text-black"
               onHoverStart={() => {
                 homeControls.start({
                   y: [0, -5, 0],
