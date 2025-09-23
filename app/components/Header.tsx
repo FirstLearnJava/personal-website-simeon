@@ -5,13 +5,23 @@ import { Link, useRouter } from '@/i18n/routing';
 import { InstagramIcon } from '@/public/icons/InstagramIcon';
 import { useTranslations } from 'next-intl';
 import LanguageSelector from './LanguageSelector';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useAnimation,
+} from 'framer-motion';
 
 const Header = () => {
   const t = useTranslations('Header');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const instagramControls = useAnimation();
+  const mailControls = useAnimation();
+  const homeControls = useAnimation();
+  const projectsControls = useAnimation();
+  const aboutControls = useAnimation();
 
   const { scrollY } = useScroll();
 
@@ -49,32 +59,135 @@ const Header = () => {
       >
         <div className="text-[#333] sm:hidden">
           <ul className="flex gap-8 md:gap-6">
-            <li className="hover:text-black hover:scale-[1.03]">
+            <motion.li
+              className="hover:text-black]"
+              onHoverStart={() => {
+                homeControls.start({
+                  y: [0, -5, 0],
+                  transition: {
+                    duration: 0.38,
+                    ease: [0.25, 0.1, 0.25, 0.75],
+                    damping: 1,
+                  },
+                });
+              }}
+              animate={homeControls}
+              initial={{ y: 0, scale: 1 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 20,
+                duration: 0.45,
+              }}
+            >
               <Link href="/">{t('home')}</Link>
-            </li>
-            <li className="hover:text-black hover:scale-[1.02]">
+            </motion.li>
+            <motion.li
+              className="hover:text-black"
+              onHoverStart={() => {
+                projectsControls.start({
+                  y: [0, -5, 0],
+                  transition: {
+                    duration: 0.38,
+                    ease: [0.25, 0.1, 0.25, 0.75],
+                    damping: 1,
+                  },
+                });
+              }}
+              animate={projectsControls}
+              initial={{ y: 0, scale: 1 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 20,
+                duration: 0.45,
+              }}
+            >
               <Link href="/projects">{t('projects')}</Link>
-            </li>
-            <li className="hover:text-black hover:scale-[1.03]">
+            </motion.li>
+            <motion.li
+              className="hover:text-black"
+              onHoverStart={() => {
+                aboutControls.start({
+                  y: [0, -5, 0],
+                  transition: {
+                    duration: 0.38,
+                    ease: [0.25, 0.1, 0.25, 0.75],
+                    damping: 1,
+                  },
+                });
+              }}
+              animate={aboutControls}
+              initial={{ y: 0, scale: 1 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 20,
+                duration: 0.45,
+              }}
+            >
               <Link href="/about">{t('about')}</Link>
-            </li>
+            </motion.li>
           </ul>
         </div>
 
         <ul className="flex gap-6 items-center">
-          <li>
+          <motion.li
+            onHoverStart={() => {
+              instagramControls.start({
+                y: [0, -6, 0],
+                transition: {
+                  duration: 0.42,
+                  ease: [0.25, 0.1, 0.25, 0.75],
+                  damping: 1,
+                },
+              });
+            }}
+            animate={instagramControls}
+            initial={{ y: 0, scale: 1 }}
+            whileHover={{ scale: 1.12 }}
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 20,
+              duration: 0.42,
+            }}
+          >
             <Link
               href={'https://www.instagram.com/simeonmalte'}
               target="_blank"
             >
-              <InstagramIcon className="hover:scale-105" fill="#303030" />
+              <InstagramIcon fill="#303030" />
             </Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            onHoverStart={() => {
+              mailControls.start({
+                y: [0, -6, 0],
+                transition: {
+                  duration: 0.42,
+                  ease: [0.25, 0.1, 0.25, 0.75],
+                  damping: 1,
+                },
+              });
+            }}
+            animate={mailControls}
+            initial={{ y: 0, scale: 1 }}
+            whileHover={{ scale: 1.12 }}
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 20,
+              duration: 0.42,
+            }}
+          >
             <Link href={'mailto:contact@simeonohlsen.com'}>
-              <MailIcon className="hover:scale-105" fill="#303030" />
+              <MailIcon fill="#303030" />
             </Link>
-          </li>
+          </motion.li>
           <li>
             <LanguageSelector />
           </li>
