@@ -65,10 +65,12 @@ const LanguageSelector = () => {
               duration: 0.42,
             }}
           >
-            <UnitedKinglandIcon className=" relative group-hover:scale-105"></UnitedKinglandIcon>
+            {/* <UnitedKinglandIcon className=" relative group-hover:scale-105"></UnitedKinglandIcon> */}
+            <div className="relative group-hover:scale-105 font-mont text-[19px] w-[30px]">
+              EN
+            </div>
           </motion.div>
         )}
-
         {pathInitials === 'de' && (
           <motion.div
             onHoverStart={() => {
@@ -91,7 +93,10 @@ const LanguageSelector = () => {
               duration: 0.5,
             }}
           >
-            <GermanyIcon className=" relative group-hover:scale-105"></GermanyIcon>
+            {/* <GermanyIcon className=" relative group-hover:scale-105"></GermanyIcon> */}
+            <div className=" relative group-hover:scale-105 font-mont text-[19px] w-[30px]">
+              DE
+            </div>
           </motion.div>
         )}
 
