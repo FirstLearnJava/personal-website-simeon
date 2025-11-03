@@ -5,7 +5,7 @@ export default async function ProjectsWrapper({
   category,
   locale,
 }: {
-  category: string;
+  category?: string;
   locale: string;
 }) {
   const data = await fetchWordpressData();

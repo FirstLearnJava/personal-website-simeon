@@ -2,6 +2,11 @@ import React from 'react';
 import ProjectsWrapper from '@/app/components/ProjectsWrapper';
 import { getTranslations } from 'next-intl/server';
 import ClientCategoryPage from './../../../components/ClientCategoryPage';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My Projects',
+};
 
 export default async function ProjectPage(params: {
   params: { category?: string; locale: string };

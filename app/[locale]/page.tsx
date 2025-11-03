@@ -8,8 +8,8 @@ import { getTranslations } from 'next-intl/server';
 import AnimatedText from '../components/AnimatedText';
 
 export const metadata: Metadata = {
-  title: 'Simeon Ohlsen | Personal Page',
-  description: `Simeon Ohlsen's Homepage `,
+  title: { absolute: 'Homepage | Simeon Ohlsen' },
+  description: `Are you looking for a dancer, pianist, or a choirmaster? Contact me now!`,
 };
 
 type Params = Promise<{ id: string; locale: string }>;

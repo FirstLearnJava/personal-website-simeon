@@ -1,6 +1,9 @@
 import SubscribeForm from '@/app/components/SubscribeForm';
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = { title: 'Newsletter' };
 
 export default function NewsletterPage() {
   const t = useTranslations('Newsletter');

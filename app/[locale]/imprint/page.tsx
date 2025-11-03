@@ -1,5 +1,10 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Imprint',
+};
 
 export default function ImprintPage() {
   const t = useTranslations('Impress');
