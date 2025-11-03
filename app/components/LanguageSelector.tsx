@@ -66,7 +66,7 @@ const LanguageSelector = () => {
             }}
           >
             {/* <UnitedKinglandIcon className=" relative group-hover:scale-105"></UnitedKinglandIcon> */}
-            <div className="relative group-hover:scale-105 font-mont text-[19px] w-[30px]">
+            <div className="relative group-hover:scale-105 font-mont text-[19px] w-[30px] cursor-pointer">
               EN
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ const LanguageSelector = () => {
             }}
           >
             {/* <GermanyIcon className=" relative group-hover:scale-105"></GermanyIcon> */}
-            <div className=" relative group-hover:scale-105 font-mont text-[19px] w-[30px]">
+            <div className=" relative group-hover:scale-105 font-mont text-[19px] w-[30px] cursor-pointer">
               DE
             </div>
           </motion.div>
