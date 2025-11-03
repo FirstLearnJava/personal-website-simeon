@@ -233,19 +233,21 @@ const Header = () => {
         {/* Menu Items */}
         <ul className="mt-16 space-y-9 text-xl *:border-b-[2px] *:border-blue-900 *:mr-1">
           <li>
-            <button onClick={() => handleNavigation('/')}>Home</button>
+            <button onClick={() => handleNavigation('/')}>{t('home')}</button>
           </li>
           <li>
             <button onClick={() => handleNavigation('/projects')}>
-              Projects
+              {t('projects')}
             </button>
           </li>
           <li>
-            <button onClick={() => handleNavigation('/about')}>About</button>
+            <button onClick={() => handleNavigation('/about')}>
+              {t('about')}
+            </button>
           </li>
           <li>
             <button onClick={() => handleNavigation('/contact')}>
-              Contact
+              {t('contact')}
             </button>
           </li>
         </ul>
