@@ -26,7 +26,7 @@ const ClientCategoryPage = ({ category }: { category: string }) => {
     <motion.div
       variants={{ unscrolled: { y: 0 }, scrolled: { y: -62 } }}
       animate={isScrolled ? 'scrolled' : 'unscrolled'}
-      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
       className="h-full flex flex-col mt-14 xxxl:mt-12 sm:mt-0 items-center sm:flex sm:items-center sm:justify-center"
     >
       <div className="pt-[62px] sm:pt-[144px]">

@@ -9,7 +9,7 @@ import AnimatedText from '../components/AnimatedText';
 
 export const metadata: Metadata = {
   title: { absolute: 'Homepage | Simeon Ohlsen' },
-  description: `Are you looking for a dancer, pianist, or a choirmaster? Contact me now!`,
+  description: `Simeon Ohlsen - Dancer, Musician & Art Mediator. I combine movement and sound to help people discover themselves through artistic workshops and performances. Available for collaborations & contracting.`,
 };
 
 type Params = Promise<{ id: string; locale: string }>;

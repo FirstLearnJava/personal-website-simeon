@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ProjectsCard from './ProjectsCard';
 import { Project } from '../actions/fetchWordpressData';
 import { redirect } from '@/i18n/routing';

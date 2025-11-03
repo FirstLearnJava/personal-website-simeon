@@ -28,7 +28,7 @@ const ClientPage = () => {
         <motion.h2
           variants={{ static: { y: 0 }, moveOnScroll: { y: -62 } }}
           animate={isScrolled ? 'moveOnScroll' : 'static'}
-          transition={{ duration: 0.35, ease: 'easeInOut' }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
           className="pl-16 xxl:pl-8 xl:pl-0 text-[44px] lg:text-[46px] md:text-[40px] xs:text-[38px] font-lora tracking-[0.01em] fixed lg:static mt-1 lg:mt-[10px] md:mt-1"
         >
           Simeon Ohlsen
