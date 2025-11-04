@@ -199,6 +199,7 @@ const Header = () => {
 
         {/* Hamburger Menu Button (Only on `sm`) */}
         <button
+          aria-label="hamburger menu"
           className={`hidden ${isMenuOpen ? 'hidden' : 'sm:block  '}`}
           onClick={() => setIsMenuOpen(true)}
         >
@@ -228,6 +229,7 @@ const Header = () => {
       >
         {/* Close Button */}
         <button
+          aria-label="close hamburger menu"
           className="absolute top-5 right-5 text-2xl"
           onClick={() => setIsMenuOpen(false)}
         >

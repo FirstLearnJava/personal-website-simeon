@@ -39,6 +39,10 @@ export const metadata: Metadata = {
   description: `Simeon Ohlsen - Dancer, Musician & Art Mediator. I combine movement and sound to help people discover themselves through artistic workshops and performances. Available for collaborations & contracting.`,
 };
 
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 type Params = Promise<{ locale: string }>;
 
 export default async function LocaleLayout({
@@ -58,6 +62,7 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as never)) {
     notFound();
   }
+
   const messages = await getMessages();
   return (
     <html lang={locale}>

@@ -22,6 +22,14 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  const data = await fetchWordpressData();
+  const dataIDs = data.map((project) => {
+    return project.id;
+  });
+  return dataIDs;
+}
+
 export default async function ProjectPage({ params }: { params: Params }) {
   const awaitedParams = await params;
   const paramsId = Number(awaitedParams.id);

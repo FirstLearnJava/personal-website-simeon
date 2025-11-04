@@ -3,10 +3,19 @@ import ProjectsWrapper from '@/app/components/ProjectsWrapper';
 import { getTranslations } from 'next-intl/server';
 import ClientCategoryPage from './../../../components/ClientCategoryPage';
 import { Metadata } from 'next';
+import fetchWordpressData from '@/app/actions/fetchWordpressData';
 
 export const metadata: Metadata = {
   title: 'My Projects',
 };
+
+export async function generateStaticParams() {
+  const data = await fetchWordpressData();
+  const dataIDs = data.map((project) => {
+    return project.id;
+  });
+  return dataIDs;
+}
 
 export default async function ProjectPage(params: {
   params: { category?: string; locale: string };
