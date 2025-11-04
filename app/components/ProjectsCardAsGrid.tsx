@@ -116,17 +116,19 @@ const ProjectsCardAsGrid = ({
               {publishedOnAndBy}
             </p>
 
-            <div className="max-h-[600px] max-w-[600px]">
-              <Image
-                alt={`project image about ${title}`}
-                src={imageUrl}
-                width={600}
-                height={600}
-                className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out "
-                priority={true}
-              />
+            <div className="w-full">
+              <div className="flex justify-center">
+                <Image
+                  alt={`project image about ${title}`}
+                  src={imageUrl}
+                  width={600}
+                  height={600}
+                  className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out "
+                  priority={true}
+                />
+              </div>
               {checkCopyright() && (
-                <p className=" text-xs hover:cursor-default ml-[4px] mt-[1px] ">
+                <p className=" text-xs hover:cursor-default ml-[4px] mt-[1px]">
                   &copy; {copyrightImage}
                 </p>
               )}

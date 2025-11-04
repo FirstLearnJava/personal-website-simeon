@@ -157,6 +157,7 @@ const Header = () => {
             }}
           >
             <Link
+              aria-label="go to instagram"
               href={'https://www.instagram.com/simeonmalte'}
               target="_blank"
             >
@@ -184,7 +185,10 @@ const Header = () => {
               duration: 0.42,
             }}
           >
-            <Link href={'mailto:contact@simeonohlsen.com'}>
+            <Link
+              aria-label="send email"
+              href={'mailto:contact@simeonohlsen.com'}
+            >
               <MailIcon fill="#303030" />
             </Link>
           </motion.li>

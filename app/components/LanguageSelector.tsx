@@ -47,7 +47,7 @@ const LanguageSelector = () => {
           <motion.div
             onHoverStart={() => {
               languageSelectorControls.start({
-                y: [0, -6, 0],
+                y: [0, -5, 0],
                 transition: {
                   duration: 0.42,
                   ease: [0.25, 0.1, 0.25, 0.75],
@@ -75,7 +75,7 @@ const LanguageSelector = () => {
           <motion.div
             onHoverStart={() => {
               languageSelectorControls.start({
-                y: [0, -6, 0],
+                y: [0, -5, 0],
                 transition: {
                   duration: 0.45,
                   ease: [0.25, 0.1, 0.25, 1.0],

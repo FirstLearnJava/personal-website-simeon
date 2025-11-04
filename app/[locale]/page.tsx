@@ -26,20 +26,19 @@ export default async function HomePage({ params }: { params: Params }) {
 
   return (
     <div className="flex flex-col bg-projectBackground">
-      <div className="w-full h-[100vh] sm:hidden ">
+      <div className="w-full h-[100vh] sm:hidden relative">
         <div className="absolute  left-0 w-full h-[calc(100vh)] z-10">
           <Image
             alt="Simeon dancing in the nature"
             src={homepageCover}
             className="object-cover contrast-[1.05]"
             fill
-            sizes="100vw"
             quality={100}
             placeholder="blur"
             priority
           />
         </div>
-        <div className="absolute z-40 top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[31.6%] md:top-[31.5%] left-[64%] xl:left-[61%] lg:left-[53%] md:left-[53%] text-white sm:w-[220px] overflow-hidden">
+        <div className="absolute z-40 top-[20%]  xxl:top-[23%] xl:top-[28%] lg:top-[31.6%] md:top-[31.5%] left-[64%] xl:left-[61%] lg:left-[53%] md:left-[53%] text-white sm:w-[220px] overflow-hidden pointer-events-none">
           <h1 className=" text-[50px] xxl:text-[44px] xl:text-[42px] lg:text-[40px] md:text-[36px] sm:text-[30px] leading-9">
             <AnimatedText>Simeon Ohlsen</AnimatedText>
           </h1>
@@ -49,8 +48,8 @@ export default async function HomePage({ params }: { params: Params }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full minsm:hidden mt-[62px] mb-[30px]">
-        <div className=" absolute top-[374px] xs:top-[296px] z-10 text-white">
+      <div className="flex flex-col items-center w-full minsm:hidden mt-[62px] mb-[30px] relative">
+        <div className=" absolute top-[374px] xs:top-[296px] z-10 text-white pointer-events-none">
           <h1 className="text-[50px] xs:text-[42px] leading-9 text-center">
             <AnimatedText>Simeon Ohlsen</AnimatedText>
           </h1>
@@ -61,10 +60,6 @@ export default async function HomePage({ params }: { params: Params }) {
           className="object-cover contrast-[1.05] rounded-sm xs:hidden" // cover contain
           width={640}
           height={853}
-          /* ADAPT BEFORE Finalising project for best performance
-          sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw" */
-          //fill
-          //sizes="100vw"
           quality={100}
           placeholder="blur"
           priority
@@ -75,10 +70,6 @@ export default async function HomePage({ params }: { params: Params }) {
           className="object-cover contrast-[1.05] rounded-sm minxs:hidden" // cover contain
           width={640}
           height={853}
-          /* ADAPT BEFORE Finalising project for best performance
-          sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 30vw" */
-          //fill
-          //sizes="100vw"
           quality={100}
           placeholder="blur"
           priority

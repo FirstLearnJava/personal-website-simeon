@@ -43,7 +43,6 @@ const ClientPage = () => {
               height={990}
               placeholder="blur"
               priority
-              //sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
             />
             <Image
               alt="Simeon sitting in focused posture"
@@ -53,7 +52,6 @@ const ClientPage = () => {
               height={990}
               placeholder="blur"
               priority
-              //sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
             />
           </div>
           <p className="text-lg md:text-base sm:text-lg leading-8 sm:leading-[28px] font-dmSans mt-4 lg:mt-3 sm:mt-3 w-full sm:tracking-[0.0125rem]">
