@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectsWrapper from '@/app/components/ProjectsWrapper';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ClientCategoryPage from './../../../components/ClientCategoryPage';
 import { Metadata } from 'next';
 import fetchWordpressData from '@/app/actions/fetchWordpressData';
@@ -25,6 +25,7 @@ export default async function ProjectPage(params: {
   const resolvedParams = await params.params;
   const category = resolvedParams.category ?? '';
   const locale = resolvedParams.locale;
+  setRequestLocale(locale);
 
   const t = await getTranslations('DynamicProjects');
   return (

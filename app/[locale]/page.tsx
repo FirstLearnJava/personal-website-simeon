@@ -4,7 +4,7 @@ import homepageCoverMobileSm from '../../public/homepage/homepageCoverMobileSm.w
 import homepageCoverMobileXs from '../../public/homepage/homepageCoverMobileXs.webp';
 import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import AnimatedText from '../components/AnimatedText';
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export default async function HomePage({ params }: { params: Params }) {
   const translation = await getTranslations('HomePage');
   const awaitedParams = await params;
   const paramsLocale = awaitedParams.locale;
+  setRequestLocale(paramsLocale);
   console.log(
     'Website developed by Matthias Floimayr. Feel free to contact me, at matthiasfloimayr@gmail.com',
   );

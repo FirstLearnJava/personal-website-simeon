@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import Header from '@/app/components/Header';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
@@ -62,6 +62,7 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as never)) {
     notFound();
   }
+  setRequestLocale(locale);
 
   const messages = await getMessages();
   return (

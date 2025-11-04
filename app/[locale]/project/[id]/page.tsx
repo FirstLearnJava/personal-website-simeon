@@ -2,6 +2,7 @@ import fetchWordpressData, { Project } from '@/app/actions/fetchWordpressData';
 import Projects from '@/app/components/Projects';
 import React from 'react';
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 type Params = Promise<{ id: string; locale: string }>;
 
@@ -35,6 +36,7 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const paramsId = Number(awaitedParams.id);
   const paramsLocale = awaitedParams.locale;
   const data = await fetchWordpressData();
+  setRequestLocale(paramsLocale);
   return (
     <div className="flex justify-center pt-[62px] min-h-[calc(100vh-50px)] bg-projectBackground">
       <Projects data={data} paramsId={paramsId} paramsLocale={paramsLocale} />
