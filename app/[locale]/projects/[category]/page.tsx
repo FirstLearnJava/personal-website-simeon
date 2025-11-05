@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import ClientCategoryPage from './../../../components/ClientCategoryPage';
 import { Metadata } from 'next';
 import fetchWordpressData from '@/app/actions/fetchWordpressData';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'My Projects',
@@ -26,6 +27,11 @@ export default async function ProjectPage(params: {
   const category = resolvedParams.category ?? '';
   const locale = resolvedParams.locale;
   setRequestLocale(locale);
+  const validCategories = ['all', 'music', 'dance', 'art-mediation'];
+
+  if (!validCategories.includes(category)) {
+    notFound();
+  }
 
   const t = await getTranslations('DynamicProjects');
   return (

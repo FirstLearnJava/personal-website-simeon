@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import ProjectsCard from './ProjectsCard';
 import { Project } from '../actions/fetchWordpressData';
 import { redirect } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 
 const Projects = ({
   data,
@@ -40,11 +41,7 @@ const Projects = ({
   }, [projectInOtherLanguage, paramsLocale]);
 
   if (!projectById) {
-    return (
-      <div className="mt-20 text-xl">
-        The project you are trying to access was not found.
-      </div>
-    );
+    return notFound();
   }
 
   const checkProfessionTypeForTranslate = () => {

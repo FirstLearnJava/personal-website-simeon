@@ -53,15 +53,7 @@ export default async function LocaleLayout({
   params: Params;
 }) {
   const awaitedParams = await params;
-
-  if (!awaitedParams?.locale) {
-    notFound();
-  }
-
   const locale = awaitedParams.locale;
-  if (!routing.locales.includes(locale as never)) {
-    notFound();
-  }
   setRequestLocale(locale);
 
   const messages = await getMessages();

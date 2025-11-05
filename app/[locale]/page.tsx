@@ -15,8 +15,6 @@ export const metadata: Metadata = {
 type Params = Promise<{ id: string; locale: string }>;
 
 export default async function HomePage({ params }: { params: Params }) {
-  // Determine translation based on locale, fallback to "en" if invalid
-  //const translation = useTranslations('HomePage');
   const translation = await getTranslations('HomePage');
   const awaitedParams = await params;
   const paramsLocale = awaitedParams.locale;
