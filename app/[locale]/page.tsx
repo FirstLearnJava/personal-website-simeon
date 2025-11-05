@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import AnimatedText from '../components/AnimatedText';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: { absolute: 'Homepage | Simeon Ohlsen' },
@@ -18,6 +19,11 @@ export default async function HomePage({ params }: { params: Params }) {
   const translation = await getTranslations('HomePage');
   const awaitedParams = await params;
   const paramsLocale = awaitedParams.locale;
+
+  if (paramsLocale !== 'en' && paramsLocale !== 'de') {
+    redirect('/en');
+  }
+
   setRequestLocale(paramsLocale);
   console.log(
     'Website developed by Matthias Floimayr. Feel free to contact me, at matthiasfloimayr@gmail.com',
