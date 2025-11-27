@@ -38,7 +38,7 @@ const ProjectsCard = ({
       <div className="rounded-[4px] max-w-[600px] max-h-[600px] xxxl:max-h-[500px] xxxl:max-w-[500px] sm:max-h-full sm:max-w-full overflow-hidden">
         <Image
           alt={`project image ${title}`}
-          src={imageUrl}
+          src={imageUrl.trimEnd()}
           width={600}
           height={600}
           className="w-full h-full object-contain"

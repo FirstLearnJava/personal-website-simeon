@@ -33,9 +33,11 @@ const ProjectsCardAsGrid = ({
 }: ProjectsCard) => {
   const isOnProjectsPath = usePathname().includes('projects');
   const [isLandscapeOverflowed, setIsLandscapeOverflowed] = useState(false);
-  // const [width, setWidth] = useState(0);
-  const textRefLandscape = useRef<HTMLParagraphElement>(null);
-  const projectInViewRef = useRef(null);
+  //const [needsBlankSpaceAdjust, setNeedsBlankSpaceAdjust] = useState(false);
+  //const [cardHeight, setCardHeight] = useState(0);
+  const articleRef = useRef<HTMLParagraphElement>(null);
+  //const imageAndArticleRef = useRef<HTMLDivElement>(null);
+  const projectInViewRef = useRef<HTMLDivElement>(null);
   const isProjectInViewRef = useInView(projectInViewRef, { once: true });
   const checkCopyright = () => {
     if (copyrightImage == undefined || copyrightImage === '') {
@@ -45,30 +47,8 @@ const ProjectsCardAsGrid = ({
     }
   };
   const router = useRouter();
-
-  /*  function useViewportWidth() {
-    useEffect(() => {
-      const handleResize = () => {
-        setWidth(window.innerWidth);
-      };
-      handleResize();
-
-      window.addEventListener('resize', handleResize);
-
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    return width;
-  } */
-  /*      useEffect(() => {
-    setWidth(window.innerWidth);
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []); */
-
-  // const isSmallViewport = width <= 1024;
   useEffect(() => {
-    const element = textRefLandscape.current;
+    const element = articleRef.current;
     const calcOverflow = () => {
       if (element) {
         const isOverflowing = element.scrollHeight > element.clientHeight;
@@ -80,6 +60,26 @@ const ProjectsCardAsGrid = ({
 
     return () => window.removeEventListener('resize', calcOverflow);
   }, [article]);
+
+  /* useEffect(() => {
+    const checkBlankSpace = () => {
+      if (!imageAndArticleRef.current || !articleRef.current) return;
+      const imageAndArticle = imageAndArticleRef.current;
+      const article = articleRef.current;
+      const cardHeight = imageAndArticle?.clientHeight;
+      const articleHeight = article?.clientHeight;
+      const blankSpace = cardHeight - articleHeight;
+      setCardHeight(cardHeight);
+      console.log('title', title);
+      console.log('articleHeight:', articleHeight);
+      console.log('cardHeight:', cardHeight);
+      setNeedsBlankSpaceAdjust(blankSpace > 100);
+      console.log('blankSpace', blankSpace);
+    };
+    const timer = setTimeout(checkBlankSpace, 100);
+    return () => clearTimeout(timer);
+  }, []);
+ */
 
   if (aspectRatio === 'landscape-format') {
     return (
@@ -115,12 +115,11 @@ const ProjectsCardAsGrid = ({
               {locale === 'en' ? 'Published on: ' : 'Veröffentlicht am: '}
               {publishedOnAndBy}
             </p>
-
             <div className="w-full">
               <div className="flex justify-center">
                 <Image
                   alt={`project image about ${title}`}
-                  src={imageUrl}
+                  src={imageUrl.trimEnd()}
                   width={600}
                   height={600}
                   className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out "
@@ -135,7 +134,7 @@ const ProjectsCardAsGrid = ({
             </div>
 
             <p
-              ref={textRefLandscape}
+              ref={articleRef}
               className={`font-mont text-sm ${checkCopyright() ? '-mt-[0.125rem]' : 'mt-[0.9375rem]'} tracking-[0.0125rem] xs:line-clamp-4 line-clamp-5 xl:line-clamp-4 lg:line-clamp-5 ' ${isOnProjectsPath ? 'xxxl:!line-clamp-3 lg:!line-clamp-5 xs:!line-clamp-4' : ''} xl:text-sm md:text-[0.8125rem] md:leading-[22px]`}
             >
               {article}
@@ -201,7 +200,7 @@ const ProjectsCardAsGrid = ({
                 <div className={`max-h-[500px]`}>
                   <p
                     className={`font-mont text-sm xl:text-sm md:text-[0.8125rem] md:leading-[22px] line-clamp-[20] xxl:line-clamp-[17] xl:line-clamp-[14] lg:line-clamp-[20] md:line-clamp-[16] sm:line-clamp-[17] xs:line-clamp-4 tracking-[0.0125rem]`}
-                    ref={textRefLandscape}
+                    ref={articleRef}
                   >
                     {article}
                   </p>
@@ -227,13 +226,12 @@ const ProjectsCardAsGrid = ({
               <div className="max-h-[600px] flex-shrink-0 w-[56%] xs:w-[88%]">
                 <Image
                   alt={`project image about ${title}`}
-                  src={imageUrl}
+                  src={imageUrl.trimEnd()}
                   width={600}
                   height={600}
                   className="rounded-[4px] object-contain transition-opacity duration-200 ease-in-out "
                   priority={true}
                 />
-
                 {checkCopyright() && (
                   <p className="text-xs text-left hover:cursor-default ml-[2px] mt-[1px]">
                     &copy; {copyrightImage}
